@@ -1,3 +1,1 @@
 # covidcenter
-# covidcenter
-# covid-center
