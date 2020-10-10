@@ -10,37 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b0fff2a-0185-48e0-a752-e3475158946c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../.idea/personel.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../api-call/.idea/intlInputPhone.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../country-picker/.idea/country-picker.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Paul-WooCommerce/.idea/Paul-WooCommerce.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django_react_App/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Sproutes/.idea/Sproutes.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../front_end/.idea/front_end.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../javascript send email./.idea/javascript send email..iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python_file_handling/.idea/python_file_handling.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/.idea/www.wtproinvest.com.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/demo.tophivetheme.com/html/cryptorio/dashboard/.idea/Dark.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader (1)/.idea/www.wtproinvest.com.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader (1)/dashboard/.idea/Dark.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/trader.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/templates/dashboard/.idea/Dark.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/templates/dashboard/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/templates/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/trader_app/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader_app/.idea/www.wtproinvest.com.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader_app/dashboard/.idea/Dark.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../stripegateway (1)/.idea/stripegateway.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../stripegateway/.idea/stripegateway.iml" afterDir="false" />
-    </list>
+    <list default="true" id="7b0fff2a-0185-48e0-a752-e3475158946c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -151,10 +121,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="415" y="199" width="572" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602197104356">
-      <screen x="46" y="27" width="3240" height="1053" />
+    <state x="278" y="199" width="649" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602337400848">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="415" y="199" width="572" height="403" key="#com.intellij.fileTypes.FileTypeChooser/46.27.3240.1053@46.27.3240.1053" timestamp="1602197104356" />
+    <state x="278" y="199" width="649" height="403" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1602337400848" />
     <state x="46" y="27" width="1310" height="741" key="FileDocumentManager.FileCacheConflict" timestamp="1602114247332">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
@@ -175,6 +146,10 @@
       <screen x="46" y="27" width="1320" height="741" />
     </state>
     <state width="1297" height="172" key="GridCell.Tab.0.right/46.27.1320.741@46.27.1320.741" timestamp="1602243952852" />
+    <state x="798" y="244" width="381" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602337348408">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="798" y="244" width="381" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1602337348408" />
     <state x="375" y="167" width="861" height="522" key="find.popup" timestamp="1602116987290">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
