@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -154,6 +157,10 @@
       <screen x="46" y="27" width="1320" height="741" />
     </state>
     <state x="375" y="167" width="861" height="522" key="find.popup/46.27.1320.741/1366.0.1920.1080@46.27.1320.741" timestamp="1602116987290" />
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1602353993599">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1602353993599" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

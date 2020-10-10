@@ -29,23 +29,43 @@ class Country(models.Model):
     def __str__(self):
         return self.name
 
-# Create your models here.
-
-
 class State(models.Model):
-    c_id = models.ForeignKey('Country',on_delete=models.CASCADE,blank=True)
-    name = models.CharField(max_length=40,blank=True)
+    fips = models.CharField(max_length=40)
+    country = models.CharField(max_length=120,blank=True,null=True)
+    state = models.CharField(max_length=100,default=None,null=True)
+    county = models.CharField(max_length=40,default=None,blank=True,null=True)
+    level = models.CharField(max_length=40,default=None,null=True)
+    lat = models.CharField(max_length=100,default=None,null=True)
+    long = models.CharField(max_length=100,default=None,null=True)
+    population = models.IntegerField(blank=True,default=0,null=True)
 
-    def __str__(self):
-        return self.name
+    metrics_testPositivityRatio = models.FloatField(default=0.00,null=True)
+    metrics_caseDensity = models.FloatField(default=0.00,null=True)
+    metrics_contactTracerCapacityRatio = models.FloatField(default=0.00,null=True)
+    metrics_infectionRate = models.FloatField(default=0.00,null=True)
+    metrics_infectionRateCI90 = models.FloatField(default=0.00,null=True)
+    metrics_icuHeadroomRatio = models.FloatField(default=0.00,null=True)
 
-# Create your models here.
+    metrics_icuHeadroomDetails_currentIcuCovid = models.IntegerField(default=0,null=True)
+    metrics_icuHeadroomDetails_currentIcuCovidMethod = models.CharField(max_length=60,null=True)
+    metrics_icuHeadroomDetails_currentIcuNonCovid = models.IntegerField(default=0,null=True)
+    metrics_icuHeadroomDetails_currentIcuNonCovidMethod = models.CharField(max_length=60,null=True)
 
+    actuals_cases = models.IntegerField(default=0,null=True)
+    actuals_deaths = models.IntegerField(default=0,null=True)
+    actuals_positiveTests = models.IntegerField(default=0,null=True)
+    actuals_negativeTests = models.IntegerField(default=0,null=True)
+    actuals_contactTracers = models.IntegerField(default=0,null=True)
+    actuals_hospitalBeds_capacity = models.IntegerField(default=0,blank=True,null=True)
+    actuals_hospitalBeds_currentUsageTotal = models.IntegerField(blank=True,null=True)
+    actuals_hospitalBeds_currentUsageCovid = models.IntegerField(default=0,blank=True,null=True)
+    actuals_hospitalBeds_typicalUsageRate = models.FloatField(default=0.00,blank=True,null=True)
 
-class Province(models.Model):
-    s_id = models.ForeignKey('State', on_delete=models.CASCADE, blank=True)
-    name = models.CharField(max_length=40,blank=True)
-    def __str__(self):
-        return self.name
+    actuals_icuBeds_capacity = models.IntegerField(default=0,blank=True,null=True)
+    actuals_icuBeds_currentUsageTotal = models.IntegerField(default=0,blank=True,null=True)
+    actuals_icuBeds_currentUsageCovid = models.IntegerField(default=0,blank=True,null=True)
+    actuals_icuBeds_typicalUsageRate = models.IntegerField(default=0,blank=True,null=True)
+    lastUpdatedDate = models.CharField(max_length=80,blank=True,null=True)
 
-# Create your models here.
+    def _str_(self):
+        return self.state
