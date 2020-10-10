@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7b0fff2a-0185-48e0-a752-e3475158946c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../.idea/personel.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../api-call/.idea/intlInputPhone.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../country-picker/.idea/country-picker.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Paul-WooCommerce/.idea/Paul-WooCommerce.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_react_App/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Sproutes/.idea/Sproutes.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front_end/.idea/front_end.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javascript send email./.idea/javascript send email..iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../python_file_handling/.idea/python_file_handling.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/.idea/www.wtproinvest.com.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/demo.tophivetheme.com/html/cryptorio/dashboard/.idea/Dark.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader (1)/.idea/www.wtproinvest.com.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader (1)/dashboard/.idea/Dark.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/trader.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/templates/dashboard/.idea/Dark.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/templates/dashboard/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/templates/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader/trader_app/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader_app/.idea/www.wtproinvest.com.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../wordpress developer/trader_app/dashboard/.idea/Dark.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../stripegateway (1)/.idea/stripegateway.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../stripegateway/.idea/stripegateway.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1iYaRAUzfP14TPOc4xXq0X1wcFZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/src/components" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/components" />
+      <recent name="$PROJECT_DIR$/frontend/src" />
+      <recent name="$PROJECT_DIR$/frontend" />
+      <recent name="$PROJECT_DIR$/frontend/static" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.tests">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="covid-19" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="covid-19" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/frontend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/frontend/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.tests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b0fff2a-0185-48e0-a752-e3475158946c" name="Default Changelist" comment="" />
+      <created>1602086973583</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602086973583</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="415" y="199" width="572" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602197104356">
+      <screen x="46" y="27" width="3240" height="1053" />
+    </state>
+    <state x="415" y="199" width="572" height="403" key="#com.intellij.fileTypes.FileTypeChooser/46.27.3240.1053@46.27.3240.1053" timestamp="1602197104356" />
+    <state x="46" y="27" width="1310" height="741" key="FileDocumentManager.FileCacheConflict" timestamp="1602114247332">
+      <screen x="46" y="27" width="1320" height="741" />
+    </state>
+    <state x="46" y="27" width="1310" height="741" key="FileDocumentManager.FileCacheConflict/46.27.1320.741/1366.0.1920.1080@46.27.1320.741" timestamp="1602114247332" />
+    <state width="1297" height="172" key="GridCell.Tab.0.bottom" timestamp="1602243952852">
+      <screen x="46" y="27" width="1320" height="741" />
+    </state>
+    <state width="1297" height="172" key="GridCell.Tab.0.bottom/46.27.1320.741@46.27.1320.741" timestamp="1602243952852" />
+    <state width="1297" height="172" key="GridCell.Tab.0.center" timestamp="1602243952851">
+      <screen x="46" y="27" width="1320" height="741" />
+    </state>
+    <state width="1297" height="172" key="GridCell.Tab.0.center/46.27.1320.741@46.27.1320.741" timestamp="1602243952851" />
+    <state width="1297" height="172" key="GridCell.Tab.0.left" timestamp="1602243952851">
+      <screen x="46" y="27" width="1320" height="741" />
+    </state>
+    <state width="1297" height="172" key="GridCell.Tab.0.left/46.27.1320.741@46.27.1320.741" timestamp="1602243952851" />
+    <state width="1297" height="172" key="GridCell.Tab.0.right" timestamp="1602243952852">
+      <screen x="46" y="27" width="1320" height="741" />
+    </state>
+    <state width="1297" height="172" key="GridCell.Tab.0.right/46.27.1320.741@46.27.1320.741" timestamp="1602243952852" />
+    <state x="375" y="167" width="861" height="522" key="find.popup" timestamp="1602116987290">
+      <screen x="46" y="27" width="1320" height="741" />
+    </state>
+    <state x="375" y="167" width="861" height="522" key="find.popup/46.27.1320.741/1366.0.1920.1080@46.27.1320.741" timestamp="1602116987290" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

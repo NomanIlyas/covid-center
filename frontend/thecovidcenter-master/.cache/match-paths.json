@@ -1,0 +1,34 @@
+[
+    {
+        "path": "/country/",
+        "matchPath": "/country/"
+    },
+    {
+        "path": "/singleblog/",
+        "matchPath": "/singleblog/"
+    },
+    {
+        "path": "/singlenews/",
+        "matchPath": "/singlenews/"
+    },
+    {
+        "path": "/states/",
+        "matchPath": "/states/"
+    },
+    {
+        "path": "/country",
+        "matchPath": "/country/*"
+    },
+    {
+        "path": "/singleblog",
+        "matchPath": "/singleblog/*"
+    },
+    {
+        "path": "/singlenews",
+        "matchPath": "/singlenews/*"
+    },
+    {
+        "path": "/states",
+        "matchPath": "/states/*"
+    }
+]
