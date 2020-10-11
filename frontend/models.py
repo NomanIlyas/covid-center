@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import IntegerField, Model
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class CountryFlag(models.Model):
 
@@ -69,3 +71,26 @@ class State(models.Model):
 
     def _str_(self):
         return self.state
+
+class CovidRecordUpdateSetting(models.Model):
+
+    days = models.IntegerField(default=0,
+        validators=[
+            MaxValueValidator(360),
+            MinValueValidator(0),
+        ])
+    hour = models.IntegerField(default=0,
+        validators=[
+            MaxValueValidator(60),
+            MinValueValidator(0),
+        ])
+    minutes = models.IntegerField(default=0,
+        validators=[
+            MaxValueValidator(60),
+            MinValueValidator(0)
+        ])
+    seconds = models.IntegerField(default=0,
+        validators=[
+            MaxValueValidator(60),
+            MinValueValidator(0),
+        ])
