@@ -8,6 +8,50 @@ from frontend.models import Country, State
 import json
 import itertools
 
+def index(requests):
+
+    state_records = State.objects.all()
+    updated_date = State.objects.get(pk=54)
+    print("\t======================\t",updated_date.lastUpdatedDate)
+    world = Country.objects.all()
+    context = {
+        'world': world
+    }
+    context = {
+        'state_records':state_records,
+        'updated_date':updated_date,
+        'world':world,
+
+    }
+    return render(requests,'index.html', context)
+
+def country(requests,name):
+    print(str(name))
+
+    country_records = Country.objects.get(pk=name)
+    print("\t======================\t", country_records.new_cases)
+    context = {
+        'country_records':country_records,
+    }
+    return render(requests,'country.html',context)
+
+def world(requests):
+    world = Country.objects.all()
+    context = {
+        'world':world
+    }
+    return render(requests,'world.html',context)
+
+def blogs(requests):
+    return render(requests,'blogs.html')
+
+def news(requests):
+    return render(requests,'news.html')
+
+def united_states(requests):
+    return render(requests,'united-states.html')
+
+
 def importStates():
     url = "https://api.covidactnow.org/v2/states.json?apiKey="
     apiKey = "3d6a9e2ce7af4fa39b3ee24f0d6074a3"

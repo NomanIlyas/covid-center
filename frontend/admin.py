@@ -11,7 +11,7 @@ admin.site.index_title = "The Covid Center"
 
 
 class CountryAdmin(admin.ModelAdmin):
-    list_display = ('name', "total_cases", "new_cases", "total_death", "new_death", "total_recovered", "active_cases", "serious_critical", "total_cases_1m_pop", "deaths_1m_pop", "total_test", "test_1m_pop", "population", "date")
+    list_display = ('id', 'name', "total_cases", "new_cases", "total_death", "new_death", "total_recovered", "active_cases", "serious_critical", "total_cases_1m_pop", "deaths_1m_pop", "total_test", "test_1m_pop", "population", "date")
     search_fields = ('name', "total_cases", "new_cases", "total_death", )
     list_max_show_all = 25
     ordering = ['pk']

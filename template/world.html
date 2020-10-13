@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+{% include 'head.html'%}
+<body>
+<div id="gatsby-focus-wrapper mt-5" style="outline: none;" tabindex="-1">
+    {% include 'header.html' %}
+<div class="row"style="background: #fbfbfb; position: absolute;padding: 12px;top: 10%;left: 1%;" >
+    <div class="col-sm-2">
+        <div id="gatsby-focus-wrapper mt-5" style="outline: none;" tabindex="-1">
+            <main >
+                <h2>Countries</h2><a href="">South Africa</a><br>
+                <a href="{% url 'c19:country' 1 %}">London</a>
+
+            </main>
+        </div>
+    </div>
+    <div class="col-sm-10">
+          <div class="table-wrapper">
+                    <table id="main_table_countries_today" id="c19-table" class="table table-bordered table-hover main_table_countries dataTable no-footer" style="width: 100%; margin-top: 0px !important;">
+                      <thead>
+                      <tr role="row">
+                          <th aria-label="#" class="sorting_disabled" colspan="1" rowspan="1" style="width: 21px;"
+                              >#
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="Country,Other: activate to sort column ascending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 100px;" tabindex="0"
+                              width="">Country,<br>Other
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="TotalCases: activate to sort column ascending" aria-sort="descending" class="sorting_desc"
+                              colspan="1" rowspan="1" style="width: 55px;"
+                              tabindex="0" width="20">Total<br>Cases
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="NewCases: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 42px;" tabindex="0"
+                              width="30">New<br>Cases
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="TotalDeaths: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 47px;" tabindex="0"
+                              width="30">Total<br>Deaths
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="NewDeaths: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 47px;" tabindex="0"
+                              width="30">New<br>Deaths
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="TotalRecovered: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 72px;" tabindex="0"
+                              width="30">Total<br>Recovered
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="ActiveCases: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 47px;" tabindex="0"
+                              width="30">Active<br>Cases
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="Serious,Critical: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 56px;" tabindex="0"
+                              width="30">Serious,<br>Critical
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="Tot&amp;nbsp;Cases/1M pop: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 70px;"
+                              tabindex="0"
+                              width="30">Tot&nbsp;Cases/<br>1M pop
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="Deaths/1M pop: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 51px;" tabindex="0"
+                              width="30">Deaths/<br>1M pop
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="TotalTests: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 64px;" tabindex="0"
+                              width="30">Total<br>Tests
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="Tests/1M pop:activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 49px;" tabindex="0" width="30">Tests/<br>
+                              <nobr>1M pop</nobr>
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="Population: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="width: 78px;" tabindex="0"
+                              width="30">Population
+                          </th>
+                          <th aria-controls="main_table_countries_today" aria-label="Continent: activate to sort column descending" class="sorting" colspan="1"
+                              rowspan="1" style="display: none; width: 0px;" tabindex="0"
+                              width="30">Continent
+                          </th>
+                      </tr>
+                      </thead>
+                        <tbody>
+                        {% block wordl_c19 %}
+                        {% if world is not None %}
+                             {% for wc19 in  world%}
+                        <tr class="odd" role="row" style="">
+                            <td style="font-size:12px;color: grey;text-align:center;vertical-align:middle;">{{wc19.id}}</td>
+                            <td style="font-weight: bold; font-size:15px; text-align:left;">
+                                <a class="mt_a" href="{% url 'c19:country' wc19.id %}">{{wc19.name}}</a>
+                            </td>
+                            <td class="sorting_1" style="font-weight: bold; text-align:right">{{wc19.total_cases}}</td>
+                            <td style="font-weight: bold; text-align:right;background-color:#FFEEAA;">{{wc19.new_cases}}</td>
+                            <td style="font-weight: bold; text-align:right;">{{wc19.total_death}}</td>
+                            <td style="font-weight: bold;
+                                    text-align:right;background-color:red; color:white">{{wc19.new_death}}
+                            </td>
+                            <td style="font-weight: bold; text-align:right">{{wc19.total_recovered}}</td>
+
+                            <td style="text-align:right;font-weight:bold;">{{wc19.active_cases}}</td>
+                            <td style="font-weight: bold; text-align:right">{{wc19.serious_critical}}</td>
+                            <td style="font-weight: bold; text-align:right">{{wc19.total_cases_1m_pop}}</td>
+                            <td style="font-weight: bold; text-align:right">{{wc19.deaths_1m_pop}}</td>
+                            <td style="font-weight: bold; text-align:right">{{wc19.total_test}}</td>
+                            <td style="font-weight: bold; text-align:right">{{wc19.test_1m_pop}}</td>
+                            <td style="font-weight: bold; text-align:right"><a href="/world-population/us-population/">{{wc19.population}}</a>
+                            </td>
+
+                        </tr>
+                         {% endfor %}
+                            {% endif %}
+                            {% endblock %}
+                        </tbody>
+                    </table>
+
+          </div>
+    </div>
+
+</div>
+
+
+</div>
+
+</body>
+<scrip>
+    $(document).ready(function() {
+    $('#c19-table').DataTable();
+} );
+</scrip>
+</html>

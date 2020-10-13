@@ -59,7 +59,7 @@ ROOT_URLCONF = 'django_react.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR , 'frontend/thecovidcenter-master/public/')],
+        'DIRS': [os.path.join(BASE_DIR ,'template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,9 +127,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR),'frontend/thecovidcenter-master/')
+STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR),'template/src')
 STATICFILES_DIRS=(
-    os.path.join(BASE_DIR,'frontend/thecovidcenter-master/'),
+    os.path.join(BASE_DIR,'template/src'),
 )
 
 CORS_ORIGIN_ALLOW_ALL = True # added to solve CORS
