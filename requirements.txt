@@ -7,7 +7,6 @@ covid==2.4.0
 covid-daily==1.1
 COVID19Py==0.3.0
 cryptography==2.8
-cupshelpers==1.0
 cycler==0.10.0
 dbus-python==1.2.16
 dj-stripe==2.3.0
