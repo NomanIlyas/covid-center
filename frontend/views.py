@@ -8,19 +8,31 @@ from frontend.models import Country, State
 import json
 import itertools
 
+from django.db import connection
 def index(requests):
-
+    data = []
     state_records = State.objects.all()
     updated_date = State.objects.get(pk=54)
     print("\t======================\t",updated_date.lastUpdatedDate)
     world = Country.objects.all()
-    context = {
-        'world': world
-    }
+    cursor = connection.cursor()
+    cursor.execute('SELECT sum(total_cases) from frontend_country')
+    total_world_cases = cursor.fetchone()[0]
+    cursor.execute('SELECT sum(active_cases) from frontend_country')
+    mild_cases = cursor.fetchone()[0]
+    cursor.execute('SELECT sum(serious_critical) from frontend_country')
+    serious_critical = cursor.fetchone()[0]
+    cursor.execute('SELECT sum(total_recovered) from frontend_country')
+    total_recovered = cursor.fetchone()[0]
+    cursor.execute('SELECT sum(total_death) from frontend_country')
+    total_death = cursor.fetchone()[0]
+    closed_cases = total_world_cases - mild_cases
+    data = ['{:,}'.format(total_world_cases), '{:,}'.format(mild_cases), '{:,}'.format(serious_critical), '{:,}'.format(closed_cases), '{:,}'.format(total_recovered), '{:,}'.format(total_death)]
     context = {
         'state_records':state_records,
         'updated_date':updated_date,
         'world':world,
+        'data':data,
 
     }
     return render(requests,'index.html', context)

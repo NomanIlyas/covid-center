@@ -14,15 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b0fff2a-0185-48e0-a752-e3475158946c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/template/change_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/country.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_react/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_react/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_react_App/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_react_App/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/src/components/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/template/src/components/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,17 +217,17 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="798" y="244" width="381" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1602337348408" />
-    <state x="375" y="167" width="862" height="580" key="find.popup" timestamp="1602623687834">
-      <screen x="46" y="27" width="1320" height="741" />
+    <state x="529" y="226" width="1209" height="742" key="find.popup" timestamp="1602704769581">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="375" y="167" width="861" height="522" key="find.popup/46.27.1320.741/1366.0.1920.1080@46.27.1320.741" timestamp="1602116987290" />
     <state x="375" y="167" width="862" height="580" key="find.popup/46.27.1320.741/1366.201.1920.1080@46.27.1320.741" timestamp="1602623687834" />
     <state x="375" y="167" width="862" height="523" key="find.popup/46.27.1320.741@46.27.1320.741" timestamp="1602600275924" />
-    <state x="529" y="226" width="1209" height="742" key="find.popup/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1602553612643" />
-    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1602353993599">
+    <state x="529" y="226" width="1209" height="742" key="find.popup/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1602704769581" />
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1602705735126">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1602353993599" />
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1602705735126" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
