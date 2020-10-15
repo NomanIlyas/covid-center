@@ -30,10 +30,6 @@ tzlocal==2.1
 Unidecode==1.1.1
 urllib3==1.25.10
 uwsgitop==0.11
-(django3.1) 14:33 ~/covid-122 $ ^C
-(django3.1) 14:34 ~/covid-122 $ ^C
-(django3.1) 14:34 ~/covid-122 $ pip3 freeze
--f /usr/share/pip-wheels
 admin==0.0.1
 APScheduler==3.6.3
 asgiref==3.2.10
