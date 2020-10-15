@@ -3,7 +3,7 @@ from .models import Country,CountryFlag,State,CovidRecordUpdateSetting
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models import Count
 from django.db.models.functions import TruncDay
-from .models import Country,CountryFlag,State,CovidRecordUpdateSetting
+from .models import Country,CountryFlag,State,CovidRecordUpdateSetting,CovidMobility
 
 admin.site.site_header = "The Covid Center Admin Panel"
 admin.site.site_title = "The Covid Center"
@@ -70,3 +70,15 @@ class CovidRecordUpdateSettingAdmin(admin.ModelAdmin):
 
     list_display = ('id', 'days', 'hour', 'minutes', 'seconds')
 admin.site.register(CovidRecordUpdateSetting, CovidRecordUpdateSettingAdmin)
+
+
+
+class CovidMobilityAdmin(admin.ModelAdmin):
+    list_display = ('id', 'country', 'date', 'retailRecreation', 'groceryPharmacy', 'groceryPharmacy', 'parks', 'transitStations', 'workplaces', 'residential', 'diving', 'residential', 'transit', 'walking')
+    list_max_show_all = 25
+    ordering = ['pk']
+    search_fields = ('country',)
+    list_filter = ("country",)
+
+
+admin.site.register(CovidMobility, CovidMobilityAdmin)

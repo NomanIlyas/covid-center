@@ -1,14 +1,45 @@
 from datetime import datetime
 from django.utils import timezone
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 import covid_daily
 import requests
-from frontend.models import Country, State
+from frontend.models import Country, State,CovidMobility
 import json
 import itertools
-
+from django.core import serializers
 from django.db import connection
+
+import os
+import csv
+import gspread
+import pandas as pd
+from oauth2client.service_account import ServiceAccountCredentials
+def google_sheet(request):
+    url = 'template/MobilityData.csv'
+    with open(url, 'r') as file:
+        data = csv.reader(file)
+        count = 0
+        for key in data:
+            country = key[0]
+            date = key[1]
+            retailRecreation = key[2]
+            groceryPharmacy = key[3]
+            parks = key[4]
+            transitStations = key[5]
+            workplaces = key[6]
+            residential = key[7]
+            diving = key[8]
+            transit = key[9]
+            walking = key[10]
+            mobilitydata = CovidMobility.objects.create(country=country,date=date,
+                                                        retailRecreation=retailRecreation,
+                                                        groceryPharmacy=groceryPharmacy,
+                                                        parks=parks,transitStations=transitStations,
+                                                        workplaces=workplaces,residential=residential,
+                                                        diving=diving,transit=transit,walking=walking)
+            mobilitydata.save()
+    return HttpResponse("test")
 def index(requests):
     data = []
     state_records = State.objects.all()
@@ -48,6 +79,7 @@ def country(requests,name):
     return render(requests,'country.html',context)
 
 def world(requests):
+
     world = Country.objects.all()
     context = {
         'world':world
@@ -61,7 +93,14 @@ def news(requests):
     return render(requests,'news.html')
 
 def united_states(requests):
-    return render(requests,'united-states.html')
+
+    usData = CovidMobility.objects.filter(country='United States')
+    usData = json.loads(serializers.serialize('json', usData))
+    # return JsonResponse(usData,safe=False,content_type='application/json')
+    print(len(usData))
+    context={'usData':usData}
+
+    return render(requests,'united-states.html', context)
 
 
 def importStates():

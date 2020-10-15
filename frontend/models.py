@@ -94,3 +94,19 @@ class CovidRecordUpdateSetting(models.Model):
             MaxValueValidator(60),
             MinValueValidator(0),
         ])
+
+class CovidMobility(models.Model):
+    country = models.CharField(max_length=120)
+    date = models.CharField(max_length=120,blank=True,null=True)
+    retailRecreation = models.CharField(max_length=40,default=None,null=True)
+    groceryPharmacy = models.CharField(max_length=40,default=None,blank=True,null=True)
+    parks = models.CharField(max_length=40,default=None,null=True)
+    transitStations = models.CharField(max_length=40,default=None,null=True)
+    workplaces = models.CharField(max_length=40,default=None,null=True)
+    residential = models.CharField(max_length=40,blank=True,null=True)
+    diving = models.CharField(max_length=40,blank=True,null=True)
+    transit = models.CharField(max_length=40,blank=True,null=True)
+    walking = models.CharField(max_length=40,blank=True,null=True)
+
+    def _str_(self):
+        return self.country

@@ -14,7 +14,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b0fff2a-0185-48e0-a752-e3475158946c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/MobilityData.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_react/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_react/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/coverage_html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_App___init___py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_App_admin_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_App_apps_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_App_migrations___init___py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_App_models_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_App_tests_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_App_views_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react___init___py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_asgi_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_settings_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_urls_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/django_react_wsgi_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/jquery.ba-throttle-debounce.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/jquery.hotkeys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/jquery.isonscreen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/jquery.tablesorter.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/keybd_closed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/keybd_open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/main_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/manage_py.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/status.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlcov/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/united-states.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/united-states.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,8 +176,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.execute" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.execute" />
       <item itemvalue="Python.tests" />
     </list>
     <recent_temporary>
@@ -213,10 +248,11 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="798" y="244" width="381" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1602337348408" />
-    <state x="529" y="226" width="1209" height="742" key="find.popup" timestamp="1602704769581">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="2385" y="758" width="713" height="409" key="find.popup" timestamp="1602766042930">
+      <screen x="1366" y="201" width="1920" height="1080" />
     </state>
     <state x="375" y="167" width="861" height="522" key="find.popup/46.27.1320.741/1366.0.1920.1080@46.27.1320.741" timestamp="1602116987290" />
+    <state x="2385" y="758" width="713" height="409" key="find.popup/46.27.1320.741/1366.201.1920.1080@1366.201.1920.1080" timestamp="1602766042930" />
     <state x="375" y="167" width="862" height="580" key="find.popup/46.27.1320.741/1366.201.1920.1080@46.27.1320.741" timestamp="1602623687834" />
     <state x="375" y="167" width="862" height="523" key="find.popup/46.27.1320.741@46.27.1320.741" timestamp="1602600275924" />
     <state x="529" y="226" width="1209" height="742" key="find.popup/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1602704769581" />
