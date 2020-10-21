@@ -3,7 +3,7 @@ from .models import Country,CountryFlag,State,CovidRecordUpdateSetting
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db.models import Count
 from django.db.models.functions import TruncDay
-from .models import Country,CountryFlag,State,CovidRecordUpdateSetting,CovidMobility
+from .models import Country,CountryFlag,State,CovidRecordUpdateSetting,CovidMobility,CovidVaccin
 
 admin.site.site_header = "The Covid Center Admin Panel"
 admin.site.site_title = "The Covid Center"
@@ -82,3 +82,16 @@ class CovidMobilityAdmin(admin.ModelAdmin):
 
 
 admin.site.register(CovidMobility, CovidMobilityAdmin)
+
+
+
+class CovidVaccinAdmin(admin.ModelAdmin):
+
+    list_display = ('id', 'status', 'stage1', 'stage2', 's3Phase1', 's3Phase2', 's3Phase3', 'stage4', 'stage5',)
+    list_max_show_all = 25
+    ordering = ['pk']
+    search_fields = ('status',)
+    list_filter = ("status",)
+
+admin.site.register(CovidVaccin, CovidVaccinAdmin)
+

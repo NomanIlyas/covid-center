@@ -98,7 +98,7 @@ class CovidRecordUpdateSetting(models.Model):
 class CovidMobility(models.Model):
     country = models.CharField(max_length=120)
     date = models.CharField(max_length=120,blank=True,null=True)
-    retailRecreation = models.CharField(max_length=40,default=None,null=True)
+    retailRecreation = models.IntegerField(default=None,null=True)
     groceryPharmacy = models.CharField(max_length=40,default=None,blank=True,null=True)
     parks = models.CharField(max_length=40,default=None,null=True)
     transitStations = models.CharField(max_length=40,default=None,null=True)
@@ -110,3 +110,15 @@ class CovidMobility(models.Model):
 
     def _str_(self):
         return self.country
+
+class CovidVaccin(models.Model):
+    status = models.CharField(max_length=120)
+    stage1 = models.CharField(max_length=120,blank=True,null=True)
+    stage2 = models.CharField(max_length=40,default=None,null=True)
+    s3Phase1 = models.CharField(max_length=40,default=None,blank=True,null=True)
+    s3Phase2 = models.CharField(max_length=40,default=None,null=True)
+    s3Phase3 = models.CharField(max_length=40,default=None,null=True)
+    stage4 = models.CharField(max_length=40,default=None,null=True)
+    stage5 = models.CharField(max_length=40,blank=True,null=True)
+    def _str_(self):
+        return self.status

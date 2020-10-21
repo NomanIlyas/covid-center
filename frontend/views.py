@@ -1,20 +1,46 @@
 from datetime import datetime
+from django.db.models import Sum, Avg
 from django.utils import timezone
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 import covid_daily
 import requests
-from frontend.models import Country, State,CovidMobility
+from django.db.models import Q
+from frontend.models import Country, State, CovidVaccin, CovidMobility
 import json
 import itertools
 from django.core import serializers
 from django.db import connection
-
+import dictfier
 import os
 import csv
 import gspread
 import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials
+
+
+def vaccinecounts(request):
+    url = 'template/VaccineCounts.csv'
+    with open(url, 'r') as file:
+        data = csv.reader(file)
+        count = 0
+        for key in data:
+            status = key[0]
+            stage1 = key[1]
+            stage2 = key[2]
+            s3Phase1 = key[3]
+            s3Phase2 = key[4]
+            s3Phase3 = key[5]
+            stage4 = key[6]
+            stage5 = key[7]
+            mobilitydata = CovidVaccin.objects.create(status=status, stage1=stage1,
+                                                        stage2=stage2,
+                                                        s3Phase1=s3Phase1, s3Phase2=s3Phase2,
+                                                        s3Phase3=s3Phase3, stage4=stage4,
+                                                        stage5=stage5)
+            mobilitydata.save()
+    return HttpResponse("test")
+
 def google_sheet(request):
     url = 'template/MobilityData.csv'
     with open(url, 'r') as file:
@@ -40,6 +66,8 @@ def google_sheet(request):
                                                         diving=diving,transit=transit,walking=walking)
             mobilitydata.save()
     return HttpResponse("test")
+
+
 def index(requests):
     data = []
     state_records = State.objects.all()
@@ -58,13 +86,20 @@ def index(requests):
     cursor.execute('SELECT sum(total_death) from frontend_country')
     total_death = cursor.fetchone()[0]
     closed_cases = total_world_cases - mild_cases
+
     data = ['{:,}'.format(total_world_cases), '{:,}'.format(mild_cases), '{:,}'.format(serious_critical), '{:,}'.format(closed_cases), '{:,}'.format(total_recovered), '{:,}'.format(total_death)]
+
+    ongoing = CovidVaccin.objects.get(status="Ongoing")
+    success = CovidVaccin.objects.get(status="Success")
+    print(ongoing.stage1)
+
     context = {
         'state_records':state_records,
         'updated_date':updated_date,
         'world':world,
         'data':data,
-
+        'success':success,
+        'ongoing':ongoing,
     }
     return render(requests,'index.html', context)
 
@@ -78,6 +113,7 @@ def country(requests,name):
     }
     return render(requests,'country.html',context)
 
+
 def world(requests):
 
     world = Country.objects.all()
@@ -86,24 +122,103 @@ def world(requests):
     }
     return render(requests,'world.html',context)
 
+
 def blogs(requests):
     return render(requests,'blogs.html')
+
 
 def news(requests):
     return render(requests,'news.html')
 
+
 def united_states(requests):
 
-    usData = CovidMobility.objects.filter(country='United States')
-    usData = json.loads(serializers.serialize('json', usData))
-    # return JsonResponse(usData,safe=False,content_type='application/json')
-    print(len(usData))
-    context={'usData':usData}
+    updated_date = Country.objects.get(name='USA')
+    updated_state = State.objects.all().aggregate(Sum('actuals_hospitalBeds_currentUsageTotal'))
+    print("=========================================================",updated_state)
+    data = ['{:,}'.format(updated_date.total_cases), '{:,}'.format(updated_date.total_cases), '{:,}'.format(updated_date.new_cases),'{:,}'.format(updated_date.total_death), '{:,}'.format(updated_date.total_cases), '{:,}'.format(updated_date.total_cases)]
 
-    return render(requests,'united-states.html', context)
+    print("==================================",updated_date.name)
 
+    cursor = connection.cursor()
+    # plot chart record
+    # states FED Balance Sheet
+
+    retail_recreation_data = []
+    retail_recreation_labels = []
+    queryset = CovidMobility.objects.values('date','retailRecreation')[:5]
+    print(str(len(queryset)))
+    for entry in queryset:
+        retail_recreation_labels.append(entry['date'])
+        retail_recreation_data.append(entry['retailRecreation'])
+    # return JsonResponse(data={
+    #     'retail_recreation_labels': retail_recreation_labels,
+    #     'retail_recreation_data': retail_recreation_data,
+    # })
+    # updated_state = cursor.execute("SELECT ")
+    retailrecreation = cursor.execute('SELECT retailRecreation from frontend_covidmobility where country = "United States"')
+
+    cur = connection.cursor()
+    dateofretails = cur.execute('SELECT date from frontend_covidmobility where country = "United States" ')
+    resident = connection.cursor()
+    us_covismobility_record = CovidMobility.objects.filter(Q(country='United States'))
+    resid =[]
+    grocery =[]
+    park =[]
+    transit =[]
+    work_place =[]
+    data = []
+    label = []
+    # ============== convert to list to plot graph =========== #
+    # work_place
+    for work in us_covismobility_record:
+        work_place.append(work.workplaces)
+
+    # transitStations
+    for trans in us_covismobility_record:
+        transit.append(trans.transitStations)
+    # parks
+
+    for prk in us_covismobility_record:
+        park.append(prk.parks)
+
+    # grocerypharmacy
+    for groc in us_covismobility_record:
+        grocery.append(groc.groceryPharmacy)
+
+    # resident
+    for resi in us_covismobility_record:
+        resid.append(resi.residential)
+
+
+    for entry in dateofretails:
+        result = list(entry)
+        label.append(result)
+
+    for ent in retailrecreation:
+        res = list(ent)
+        data.append(res)
+    #     key indicator graph ploting
+    state_record = State.objects.all()
+    for a in state_record:
+        print(a)
+    # states_record = State.objects.filter(Q('lastUpdatedDate')).annotate()
+
+    return render(requests,'united-states.html', {'updated_date': updated_date,
+                                                  'data': data,'label': label,
+                                                  'updated_state': updated_state,
+                                                  'retail_recreation_labels': retail_recreation_labels,
+                                                  'retail_recreation_data': retail_recreation_data,
+                                                  'resid': resid,
+                                                  'grocery': grocery,
+                                                  'park': park,
+                                                  'transit': transit,
+                                                  'work_place': work_place,
+
+                                                  })
 
 def importStates():
+
     url = "https://api.covidactnow.org/v2/states.json?apiKey="
     apiKey = "3d6a9e2ce7af4fa39b3ee24f0d6074a3"
     objects = requests.get(url + apiKey).content
@@ -220,9 +335,6 @@ def importStates():
             covid_states.save()
 
     return timezone.now().strftime('%X')
-
-
-
 
 def importCountries():
     overview = covid_daily.overview(as_json=True)

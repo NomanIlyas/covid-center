@@ -103,8 +103,8 @@
             </div>
             <div class="container-fluid">
                  <div class="col-lg-12">
-                     <table class="table table-bordered table-hover main_table_countries dataTable no-footer" id="c19-table"
-                            id="main_table_countries_today"
+                     <table class="table table-bordered table-hover main_table_countries dataTable table-responsive no-footer " id="c19-table"
+
                             style="width: 100%; margin-top: 0px !important;">
                      <thead>
                       <tr role="row">
@@ -226,6 +226,7 @@
                     <p class="section-paragrapgh">What’s an SEIR model? An SEIR model tracks the flow of people between
                         four states: susceptible (S), exposed (E), infected (I), and recovered (R).</p></div>
             </div>
+            {% block vaccine %}
             <div class="vaccineWrapper"><p class="covidVaccineStagesAndPhases-title">COVID-19 or Coronavirus vaccine
                 development stages and status</p>
                 <div class="covidVaccineStagesAndPhases">
@@ -235,7 +236,7 @@
                                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+CjxwYXRoIGQ9Ik0xMS43NjcxIDYuNjc4MThWNC44NjkzMkg2LjM2NzQzVjE1LjUzMDZIMTEuNzY3MVYxMy43MjE3QzEwLjEyMjQgMTMuMzkzOSA4Ljg3ODg1IDExLjkzOTYgOC44Nzg4NSAxMC4xOTk5QzguODc4ODUgOC40NjAyOCAxMC4xMjI0IDcuMDA2MDMgMTEuNzY3MSA2LjY3ODE4VjYuNjc4MThaIiBmaWxsPSIjMDQwOTMyIi8+CjxwYXRoIGQ9Ik03LjI4NDY3IDE2LjkzNjhIMTAuODQ5N1YxOC44NDc3SDcuMjg0NjdWMTYuOTM2OFoiIGZpbGw9IiMwNDA5MzIiLz4KPHBhdGggZD0iTTIxLjY5NDkgMTUuOTcxN0MyMS42OTQ5IDEyLjQwMTUgMTguNzkwNCA5LjQ5Njg1IDE1LjIyMDEgOS40OTY4NUgxNC41MzgzQzE0LjI0NDkgOC42MzYwMyAxMy40Mjg4IDguMDE0ODkgMTIuNDY5OSA4LjAxNDg5QzExLjI2NTEgOC4wMTQ4OSAxMC4yODQ5IDguOTk1MSAxMC4yODQ5IDEwLjE5OTlDMTAuMjg0OSAxMS40MDQ4IDExLjI2NTEgMTIuMzg1IDEyLjQ2OTkgMTIuMzg1QzEzLjQyODggMTIuMzg1IDE0LjI0NDggMTEuNzYzOSAxNC41MzgzIDEwLjkwM0gxNS4yMjAxQzE4LjAxNSAxMC45MDMgMjAuMjg4NyAxMy4xNzY4IDIwLjI4ODcgMTUuOTcxNkMyMC4yODg3IDE4Ljc2NjIgMTguMDE1NCAyMS4wMzk3IDE1LjIyMSAyMS4wNDAySDIuMzA1NjZWMjQuMDAwMUgyMS42OTVWMjEuMDQwMkgxOS4yNDQ0QzIwLjczNjUgMTkuODUzIDIxLjY5NDkgMTguMDIyMyAyMS42OTQ5IDE1Ljk3MTdWMTUuOTcxN1oiIGZpbGw9IiMwNDA5MzIiLz4KPHBhdGggZD0iTTcuMzgyODEgMy40NTk3NUgxMC43NTA3VjEuNDA2MjVIMTIuMTU2OVYwSDUuOTc2NTZWMS40MDYyNUg3LjM4MjgxVjMuNDU5NzVaIiBmaWxsPSIjMDQwOTMyIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDAiPgo8cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg=="></div>
                         <div class="stageTitle paragraph"><h3>Exploratory<br>Stage</h3></div>
                         <div class="stageNumber"><p class="c5Para">Stage 1</p></div>
-                        <div class="totalStageCount"><h2>0</h2></div>
+                        <div class="totalStageCount"><h2>{{ongoing.stage1}}</h2></div>
                         <div class="progressBar">
                             <svg class="rc-progress-line" preserveAspectRatio="none" viewBox="0 0 100 3">
                                 <path class="rc-progress-line-trail" d="M 0,1.5
@@ -251,12 +252,12 @@
                         <div class="progressCount">
                             <div class="ongoingIndicator"></div>
                             <div class="gs0Para indicatorPara">Ongoing</div>
-                            <div class="count gs0Para">0 <span class="">/ 204</span></div>
+                            <div class="count gs0Para">{{ongoing.stage1}} <span class="">/ {{success.stage1}}</span></div>
                         </div>
                         <div class="progressCount">
                             <div class="successIndicator"></div>
                             <div class="gs0Para indicatorPara">Success</div>
-                            <div class="count gs0Para">204 <span class="totalVaccinesCount">/ 204</span></div>
+                            <div class="count gs0Para">{{success.stage1}} <span class="totalVaccinesCount">/ {{success.stage1}}</span></div>
                         </div>
                     </div>
                     <div class="stages stage2">
@@ -265,7 +266,7 @@
                                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwLjk2NDMgOS42MDk1NFY2LjMwNzAxQzIwLjk2NDMgNS44OTI4MiAyMC42Mjg1IDUuNTU3MDEgMjAuMjE0MyA1LjU1NzAxQzE4LjYyMDEgNS41NTcwMSAxNy4yMDU5IDYuNTM3OTEgMTYuNjk4NCA4LjE0NzU1QzEwLjcwMTUgMS45NjUxNiAwIDYuMjI2OCAwIDE0Ljk3NjVDMCAxNC45Nzk4IDAuMDAwNDY4NzUgMTQuOTgzMSAwLjAwMDUxNTYyNSAxNC45ODYzQzAuMDA1OTA2MjUgMTcuMDc2NSAxLjcwNzg0IDE4Ljc3NTQgMy43OTkyNyAxOC43NzU0SDExLjgyNDRDMTIuMjM4NiAxOC43NzU0IDEyLjU3NDQgMTguNDM5NiAxMi41NzQ0IDE4LjAyNTRDMTIuNTc0NCAxNy42MTEyIDEyLjIzODYgMTcuMjc1NCAxMS44MjQ0IDE3LjI3NTRIMy43OTkyN0MyLjc5NDIyIDE3LjI3NTQgMS45MzgzMyAxNi42MjY4IDEuNjI2NTYgMTUuNzI2NUgxMi40MTk1VjE0Ljk3NjRDMTIuNDE5NSAxMy41MDE2IDExLjIxOTcgMTIuMzAxNyA5Ljc0NDg5IDEyLjMwMTdDOS4zMzA3IDEyLjMwMTcgOC45OTQ4OSAxMS45NjU5IDguOTk0ODkgMTEuNTUxN0M4Ljk5NDg5IDExLjEzNzUgOS4zMzA3IDEwLjgwMTcgOS43NDQ4OSAxMC44MDE3QzEyLjA0NjggMTAuODAxNyAxMy45MTk1IDEyLjY3NDUgMTMuOTE5NSAxNC45NzY0VjE1LjcyNjVIMjMuMjVDMjMuNjY0MiAxNS43MjY1IDI0IDE1LjM5MDcgMjQgMTQuOTc2NUMyNCAxMi42OTU0IDIyLjc4MTEgMTAuNzAzOCAyMC45NjQzIDkuNjA5NTRaTTIwLjU0MjEgMTMuMTc1MUMxOS45OTQyIDEzLjE3NTEgMTkuNTUgMTIuNzMwOSAxOS41NSAxMi4xODNDMTkuNTUgMTEuNjM1IDE5Ljk5NDIgMTEuMTkwOCAyMC41NDIxIDExLjE5MDhDMjEuMDkwMSAxMS4xOTA4IDIxLjUzNDMgMTEuNjM1IDIxLjUzNDMgMTIuMTgzQzIxLjUzNDIgMTIuNzMwOSAyMS4wOSAxMy4xNzUxIDIwLjU0MjEgMTMuMTc1MVoiIGZpbGw9IiMwNDA5MzIiLz4KPC9zdmc+Cg=="></div>
                         <div class="stageTitle paragraph"><h3>Pre Clinical<br>Stage</h3></div>
                         <div class="stageNumber"><p class="c5Para">Stage 2</p></div>
-                        <div class="totalStageCount"><h2>165</h2></div>
+                        <div class="totalStageCount"><h2>{{success.stage1}}</h2></div>
                         <div class="progressBar">
                             <svg class="rc-progress-line" preserveAspectRatio="none" viewBox="0 0 100 3">
                                 <path class="rc-progress-line-trail" d="M 0,1.5
@@ -281,12 +282,12 @@
                         <div class="progressCount">
                             <div class="ongoingIndicator"></div>
                             <div class="gs0Para indicatorPara">Ongoing</div>
-                            <div class="count gs0Para">165 <span class="">/ 204</span></div>
+                            <div class="count gs0Para">{{ongoing.stage1}} <span class="">/ {{success.stage2}}</span></div>
                         </div>
                         <div class="progressCount">
                             <div class="successIndicator"></div>
                             <div class="gs0Para indicatorPara">Success</div>
-                            <div class="count gs0Para">39 <span class="">/ 204</span></div>
+                            <div class="count gs0Para">{{ongoing.stage2}} <span class="">/ {{success.stage2}}</span></div>
                         </div>
                     </div>
                     <div class="stages stage3">
@@ -296,11 +297,11 @@
                         <div class="stageTitle paragraph"><h3>Human Trials<br>Stage</h3></div>
                         <div class="stageNumber"><p class="c5Para">Stage 3</p></div>
                         <div class="totalStageCount">
-                            <div class="phases phase1"><h2>16</h2>
+                            <div class="phases phase1"><h2>{{ongoing.s3Phase3}}</h2>
                                 <p class="c5Para">S3 : Phase 1</p></div>
-                            <div class="phases phase2"><h2>13</h2>
+                            <div class="phases phase2"><h2>{{ongoing.s3Phase1}}</h2>
                                 <p class="c5Para">S3 : Phase 2</p></div>
-                            <div class="phases phase3"><h2>10</h2>
+                            <div class="phases phase3"><h2>{{ongoing.s3Phase2}}</h2>
                                 <p class="c5Para">S3 : Phase 3</p></div>
                         </div>
                         <div class="progressBar">
@@ -318,12 +319,12 @@
                         <div class="progressCount">
                             <div class="ongoingIndicator"></div>
                             <div class="gs0Para indicatorPara">Ongoing</div>
-                            <div class="count gs0Para">39 <span class="">/ 204</span></div>
+                            <div class="count gs0Para">{{ongoing.stage2}} <span class="">/ {{success.stage1}}</span></div>
                         </div>
                         <div class="progressCount">
                             <div class="successIndicator"></div>
                             <div class="gs0Para indicatorPara">Success</div>
-                            <div class="count gs0Para">0 <span class="">/ 204</span></div>
+                            <div class="count gs0Para">{{success.stage2}} <span class="">/ {{success.stage1}}</span></div>
                         </div>
                     </div>
                     <div class="stages stage4">
@@ -332,7 +333,7 @@
                                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+CjxwYXRoIGQ9Ik0xOS4wNDUyIDQuMjI2NzVIMTcuNjM2MkMxNy4yNDY4IDQuMjI2NzUgMTYuOTMxNiA0LjU0MTg0IDE2LjkzMTYgNC45MzEyOEMxNi45MzE2IDUuMzIwNjcgMTcuMjQ2NyA1LjYzNTgxIDE3LjYzNjIgNS42MzU4MUgxOS4wNDUyQzE5LjQzNDYgNS42MzU4MSAxOS43NDk3IDUuMzIwNzEgMTkuNzQ5NyA0LjkzMTI4QzE5Ljc0OTcgNC41NDE4NCAxOS40MzQ2IDQuMjI2NzUgMTkuMDQ1MiA0LjIyNjc1WiIgZmlsbD0iIzA0MDkzMiIvPgo8cGF0aCBkPSJNMTEuOTI1MiAxLjc5ODAyTDExLjIyMDcgMC4zODkwMDJDMTEuMDQ1MyAwLjA0MDg2MjIgMTAuNjIzNiAtMC4wOTg3NzgyIDEwLjI3NTQgMC4wNzM5MDlDOS45MjcyOCAwLjI0Nzk1NiA5Ljc4NjI0IDAuNjcxMDk1IDkuOTYwMzMgMS4wMTkyNEwxMC42NjQ5IDIuNDI4MjVDMTAuODM4NyAyLjc3NDk4IDExLjI1OTcgMi45MTc0MyAxMS42MTAyIDIuNzQzMzRDMTEuOTU4MiAyLjU2OTI5IDEyLjA5OTMgMi4xNDYxNiAxMS45MjUyIDEuNzk4MDJaIiBmaWxsPSIjMDQwOTMyIi8+CjxwYXRoIGQ9Ik0xNi41NDIzIDAuMDczOTAwNkMxNi4xOTU1IC0wLjA5ODc4NjYgMTUuNzcxMSAwLjA0MDkwMDcgMTUuNTk3IDAuMzg4OTk0TDE0Ljg5MjQgMS43OTgwMUMxNC43MTg0IDIuMTQ2MTUgMTQuODU5NCAyLjU2OTI0IDE1LjIwNzUgMi43NDMzM0MxNS41NTkgMi45MTc5IDE1Ljk3OTYgMi43NzM4IDE2LjE1MjggMi40MjgyNEwxNi44NTc0IDEuMDE5MjNDMTcuMDMxNCAwLjY3MTA4NyAxNi44OTA0IDAuMjQ3OTQ3IDE2LjU0MjMgMC4wNzM5MDA2WiIgZmlsbD0iIzA0MDkzMiIvPgo8cGF0aCBkPSJNOS4xODE5IDQuMjI2NzVINy43NzI4OUM3LjM4MzUgNC4yMjY3NSA3LjA2ODM2IDQuNTQxODQgNy4wNjgzNiA0LjkzMTI4QzcuMDY4MzYgNS4zMjA2NyA3LjM4MzQ1IDUuNjM1ODEgNy43NzI4OSA1LjYzNTgxSDkuMTgxOUM5LjU3MTI5IDUuNjM1ODEgOS44ODY0MyA1LjMyMDcxIDkuODg2NDMgNC45MzEyOEM5Ljg4NjQzIDQuNTQxODQgOS41NzEyOSA0LjIyNjc1IDkuMTgxOSA0LjIyNjc1WiIgZmlsbD0iIzA0MDkzMiIvPgo8cGF0aCBkPSJNNC45NTUyMiAxMS4zMTg4SDIuMTM3MTVDMS43NDgwOSAxMS4zMTg4IDEuNDMyNjIgMTEuNjM0MiAxLjQzMjYyIDEyLjAyMzNWMjMuMjk1NEMxLjQzMjYyIDIzLjY4NDUgMS43NDgwNCAyMy45OTk5IDIuMTM3MTUgMjMuOTk5OUg0Ljk1NTE3QzUuMzQ0MjQgMjMuOTk5OSA1LjY1OTcgMjMuNjg0NSA1LjY1OTcgMjMuMjk1NFYxMi4wMjMzQzUuNjU5NyAxMS42MzQyIDUuMzQ0MzMgMTEuMzE4OCA0Ljk1NTIyIDExLjMxODhaIiBmaWxsPSIjMDQwOTMyIi8+CjxwYXRoIGQ9Ik0yMi41NTM1IDEzLjE4NjRDMjIuNDI5MyAxMi4wOTM1IDIxLjQwODQgMTEuMzE4OSAyMC4zMDg1IDExLjMxODlIMTQuODE1OUMxNS4yODI3IDEwLjQ4MzEgMTUuNTMzMiA4LjExOTA1IDE1LjUyMjEgNy4xNTMzM0MxNS41MDM3IDUuNTU0OCAxNC4xNzk5IDQuMjczOCAxMi41ODEzIDQuMjczOEgxMkMxMS42MTA2IDQuMjczOCAxMS4yOTU0IDQuNTg4OSAxMS4yOTU0IDQuOTc4MzNDMTEuMjk1NCA2LjYwNzQ3IDEwLjY2MTEgOS41NDgwMyA5LjQ2NDcgMTAuNzQ0NUM4LjY1OTQzIDExLjU0OTcgNy45NzEwMyAxMS44NDE1IDcuMDY4MzYgMTIuMjkyNlYyMi44NjM4QzguNDUwMzcgMjMuMzI0NCAxMC4yMDUxIDI0LjAwMDEgMTIuODc5NiAyNC4wMDAxSDE3LjQ4ODJDMTkuMDA2NyAyNC4wMDAxIDIwLjE4OTMgMjIuNTkzNyAxOS42MDA5IDIxLjEwNzhDMjAuNDk3NCAyMC44NjM2IDIxLjE1ODUgMjAuMDQxNCAyMS4xNTg1IDE5LjA2ODZDMjEuMTU4NSAxOC43OTQgMjEuMTA1NiAxOC41MzEyIDIxLjAwOTkgMTguMjg5N0MyMi41MjA3IDE3Ljg3ODEgMjMuMDc2NyAxNi4wMTI3IDIyLjAyODIgMTQuODQxNUMyMi40MTM0IDE0LjQxMTEgMjIuNjI1OSAxMy44MjI1IDIyLjU1MzUgMTMuMTg2NFoiIGZpbGw9IiMwNDA5MzIiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMCI+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K"></div>
                         <div class="stageTitle paragraph"><h3>Approval<br>Stage</h3></div>
                         <div class="stageNumber"><p class="c5Para">Stage 4</p></div>
-                        <div class="totalStageCount"><h2>0</h2></div>
+                        <div class="totalStageCount"><h2>{{success.stage4}}</h2></div>
                         <div class="progressBar">
                             <svg class="rc-progress-line" preserveAspectRatio="none" viewBox="0 0 100 3">
                                 <path class="rc-progress-line-trail" d="M 0,1.5
@@ -348,12 +349,12 @@
                         <div class="progressCount">
                             <div class="ongoingIndicator"></div>
                             <div class="gs0Para indicatorPara">Ongoing</div>
-                            <div class="count gs0Para">0 <span class="">/ 204</span></div>
+                            <div class="count gs0Para">{{ongoing.stage1}} <span class="">/ {{success.stage1}}</span></div>
                         </div>
                         <div class="progressCount">
                             <div class="successIndicator"></div>
                             <div class="gs0Para indicatorPara">Success</div>
-                            <div class="count gs0Para">0 <span class="">/ 204</span></div>
+                            <div class="count gs0Para">{{ongoing.stage1}} <span class="">/ {{success.stage1}}</span></div>
                         </div>
                     </div>
                     <div class="stages stage5">
@@ -362,7 +363,7 @@
                                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEuOTIxODggMjRDMi45NTc0MSAyNCAzLjc5Njg4IDIzLjE2MDUgMy43OTY4OCAyMi4xMjVDMy43OTY4OCAyMS4wODk1IDIuOTU3NDEgMjAuMjUgMS45MjE4OCAyMC4yNUMwLjg4NjM0MSAyMC4yNSAwLjA0Njg3NSAyMS4wODk1IDAuMDQ2ODc1IDIyLjEyNUMwLjA0Njg3NSAyMy4xNjA1IDAuODg2MzQxIDI0IDEuOTIxODggMjRaIiBmaWxsPSIjMDQwOTMyIi8+CjxwYXRoIGQ9Ik0xMiAyNEMxMy4wMzU1IDI0IDEzLjg3NSAyMy4xNjA1IDEzLjg3NSAyMi4xMjVDMTMuODc1IDIxLjA4OTUgMTMuMDM1NSAyMC4yNSAxMiAyMC4yNUMxMC45NjQ1IDIwLjI1IDEwLjEyNSAyMS4wODk1IDEwLjEyNSAyMi4xMjVDMTAuMTI1IDIzLjE2MDUgMTAuOTY0NSAyNCAxMiAyNFoiIGZpbGw9IiMwNDA5MzIiLz4KPHBhdGggZD0iTTE0LjY4OTkgMjAuMjVDMTUuMDYxOCAyMC43ODE5IDE1LjI4MDggMjEuNDI4MiAxNS4yODA4IDIyLjEyNUMxNS4yODA4IDIyLjgyMTggMTUuMDYxOCAyMy40NjgxIDE0LjY4OTkgMjRIMTkuMzg3MkMxOS4wMTU0IDIzLjQ2ODEgMTguNzk2NCAyMi44MjE4IDE4Ljc5NjQgMjIuMTI1QzE4Ljc5NjQgMjEuNDI4MiAxOS4wMTU0IDIwLjc4MTkgMTkuMzg3MiAyMC4yNUgxNC42ODk5WiIgZmlsbD0iIzA0MDkzMiIvPgo8cGF0aCBkPSJNNC42MTIwNiAyMC4yNUM0Ljk4Mzg3IDIwLjc4MTkgNS4yMDI4NyAyMS40MjgyIDUuMjAyODcgMjIuMTI1QzUuMjAyODcgMjIuODIxOCA0Ljk4Mzg3IDIzLjQ2ODEgNC42MTIwNiAyNEg5LjMwOTMxQzguOTM3NDkgMjMuNDY4MSA4LjcxODQ5IDIyLjgyMTggOC43MTg0OSAyMi4xMjVDOC43MTg0OSAyMS40MjgyIDguOTM3NDkgMjAuNzgxOSA5LjMwOTMxIDIwLjI1SDQuNjEyMDZaIiBmaWxsPSIjMDQwOTMyIi8+CjxwYXRoIGQ9Ik0yMi4wNzgxIDI0QzIzLjExMzcgMjQgMjMuOTUzMSAyMy4xNjA1IDIzLjk1MzEgMjIuMTI1QzIzLjk1MzEgMjEuMDg5NSAyMy4xMTM3IDIwLjI1IDIyLjA3ODEgMjAuMjVDMjEuMDQyNiAyMC4yNSAyMC4yMDMxIDIxLjA4OTUgMjAuMjAzMSAyMi4xMjVDMjAuMjAzMSAyMy4xNjA1IDIxLjA0MjYgMjQgMjIuMDc4MSAyNFoiIGZpbGw9IiMwNDA5MzIiLz4KPHBhdGggZD0iTTEzLjc1NzggMTQuNjI1SDEwLjI0MjJDOS44NTM4NyAxNC42MjUgOS41MzkwNiAxNC45Mzk4IDkuNTM5MDYgMTUuMzI4MVYxOC44NDM4SDE0LjQ2MDlWMTUuMzI4MUMxNC40NjA5IDE0LjkzOTggMTQuMTQ2MSAxNC42MjUgMTMuNzU3OCAxNC42MjVaIiBmaWxsPSIjMDQwOTMyIi8+CjxwYXRoIGQ9Ik0zLjIxMDk0IDE0LjYyNUMyLjgyMjYyIDE0LjYyNSAyLjUwNzgxIDE0LjkzOTggMi41MDc4MSAxNS4zMjgxVjE4Ljg0MzhINy40Mjk2OVYxNS4zMjgxQzcuNDI5NjkgMTQuOTM5OCA3LjExNDg4IDE0LjYyNSA2LjcyNjU2IDE0LjYyNUgzLjIxMDk0WiIgZmlsbD0iIzA0MDkzMiIvPgo8cGF0aCBkPSJNMTcuMjczNCAxNC42MjVDMTYuODg1MSAxNC42MjUgMTYuNTcwMyAxNC45Mzk4IDE2LjU3MDMgMTUuMzI4MVYxOC44NDM4SDIxLjQ5MjJWMTUuMzI4MUMyMS40OTIyIDE0LjkzOTggMjEuMTc3NCAxNC42MjUgMjAuNzg5MSAxNC42MjVIMTcuMjczNFoiIGZpbGw9IiMwNDA5MzIiLz4KPHBhdGggZD0iTTguMjUgMTMuMTI1QzguNjM4MzEgMTMuMTI1IDguOTUzMTIgMTIuODEwMiA4Ljk1MzEyIDEyLjQyMTlWMTEuMDE1NkM4Ljk1MzEyIDEwLjczNDQgOC43ODU1IDEwLjQ4MDEgOC41MjY5OCAxMC4zNjk0TDUuNjcxODggOS4xNDU3M1Y3LjU0NThDNi4wOTIwNiA3LjMwMjYxIDYuMzc1IDYuODQ4NTggNi4zNzUgNi4zMjgxMkM2LjM3NSA1LjU1MTQ1IDUuNzQ1NDIgNC45MjE4OCA0Ljk2ODc1IDQuOTIxODhDNC4xOTIwOCA0LjkyMTg4IDMuNTYyNSA1LjU1MTQ1IDMuNTYyNSA2LjMyODEyQzMuNTYyNSA2Ljg0ODUzIDMuODQ1NDQgNy4zMDI2MSA0LjI2NTYyIDcuNTQ1OFY5LjE0NTczTDEuNDEwNTIgMTAuMzY5NEMxLjE1MiAxMC40ODAxIDAuOTg0Mzc1IDEwLjczNDQgMC45ODQzNzUgMTEuMDE1NlYxMi40MjE5QzAuOTg0Mzc1IDEyLjgxMDIgMS4yOTkxOSAxMy4xMjUgMS42ODc1IDEzLjEyNUMyLjA3NTgxIDEzLjEyNSAyLjM5MDYyIDEyLjgxMDIgMi4zOTA2MiAxMi40MjE5VjExLjQ3OTNMNC45Njg3NSAxMC4zNzQ0TDcuNTQ2ODggMTEuNDc5M1YxMi40MjE5QzcuNTQ2ODggMTIuODEwMiA3Ljg2MTY5IDEzLjEyNSA4LjI1IDEzLjEyNVoiIGZpbGw9IiMwNDA5MzIiLz4KPHBhdGggZD0iTTIzLjI5NjkgMEgwLjcwMzEyNUMwLjMxNDgxMiAwIDAgMC4zMTQ4MTIgMCAwLjcwMzEyNUMwIDEuMDkxNDQgMC4zMTQ4MTIgMS40MDYyNSAwLjcwMzEyNSAxLjQwNjI1SDE0LjQwNjdMMTIuMzc3MyA0LjkyMTQxQzEyLjI0NjggNS4xNDczOSAxMi4xNTIgNS4zODQxMSAxMi4wODk3IDUuNjI1SDcuNjkxNDRDNy43NDk0MiA1Ljg0OTgxIDcuNzgxMiA2LjA4NTE3IDcuNzgxMiA2LjMyODEyQzcuNzgxMiA2LjU3MTA4IDcuNzQ5NDIgNi44MDY0NCA3LjY5MTQ0IDcuMDMxMjVIMTIuMDkwNEMxMi4yNzI2IDcuNzM2MiAxMi43MjYzIDguMzcwNTIgMTMuNDA2NyA4Ljc2MzMzQzE0Ljc1MTkgOS41Mzk5NSAxNi40NzIgOS4wNzkwOCAxNy4yNDg2IDcuNzMzOTFMMjAuOTAxOSAxLjQwNjI1SDIzLjI5NjlDMjMuNjg1MiAxLjQwNjI1IDI0IDEuMDkxNDQgMjQgMC43MDMxMjVDMjQgMC4zMTQ4MTIgMjMuNjg1MiAwIDIzLjI5NjkgMFpNMTQuODEyNSA3LjAzMTI1QzE0LjQyNDIgNy4wMzEyNSAxNC4xMDk0IDYuNzE2NDQgMTQuMTA5NCA2LjMyODEyQzE0LjEwOTQgNS45Mzk4MSAxNC40MjQyIDUuNjI1IDE0LjgxMjUgNS42MjVDMTUuMjAwOCA1LjYyNSAxNS41MTU2IDUuOTM5ODEgMTUuNTE1NiA2LjMyODEyQzE1LjUxNTYgNi43MTY0NCAxNS4yMDA4IDcuMDMxMjUgMTQuODEyNSA3LjAzMTI1WiIgZmlsbD0iIzA0MDkzMiIvPgo8L3N2Zz4K"></div>
                         <div class="stageTitle paragraph"><h3>Production<br>Stage</h3></div>
                         <div class="stageNumber"><p class="c5Para">Stage 5</p></div>
-                        <div class="totalStageCount"><h2>0</h2></div>
+                        <div class="totalStageCount"><h2>{{ongoing.stage4}}</h2></div>
                         <div class="progressBar">
                             <svg class="rc-progress-line" preserveAspectRatio="none" viewBox="0 0 100 3">
                                 <path class="rc-progress-line-trail" d="M 0,1.5
@@ -378,12 +379,12 @@
                         <div class="progressCount">
                             <div class="ongoingIndicator"></div>
                             <div class="gs0Para indicatorPara">Ongoing</div>
-                            <div class="count gs0Para">0 <span class="">/ 204</span></div>
+                            <div class="count gs0Para">{{ongoing.stage1}} <span class="">/ {{success.stage1}}</span></div>
                         </div>
                         <div class="progressCount">
                             <div class="successIndicator"></div>
                             <div class="gs0Para indicatorPara">Success</div>
-                            <div class="count gs0Para">0 <span class="">/ 204</span></div>
+                            <div class="count gs0Para">{{ongoing.stage1}} <span class="">/ {{success.stage1}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -405,11 +406,49 @@
                 <div class="chart-slider">
 
                         <div class="row">
-                           <div class=" col-sm-6">
-                                  <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item" data-index="1" style="flex: 1 1 auto; position: relative; width: 424px;">
-                                <div class="single-line-chart-card"><h4 class="chart-card-title">Fed Balance Sheet</h4>
+
+                           <div class=" col-sm-4">
+                               <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item" data-index="1" style="flex: 1 1 auto; position: relative; width: 424px;">
+
+                                   <div class="single-line-chart-card"><h4 class="chart-card-title">Fed Balance Sheet</h4>
                                     <h6 class="chart-card-subtitle">In Trillions USD</h6>
-                                    <div class="chart-area">
+
+                                       <div class="chart-area">
+
+                                        <div id="home-fed-balance-sheet-chart" style="width: 100%; height: 300px;">
+                                            <div style="width: 100%; height: 100%; position: relative; left: 0.25px; top: 0.40625px;">
+                                                <div id="lineChart121"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           </div>
+                            <div class=" col-sm-4">
+                               <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item" data-index="1" style="flex: 1 1 auto; position: relative; width: 424px;">
+
+                                   <div class="single-line-chart-card"><h4 class="chart-card-title">Fed Balance Sheet</h4>
+                                    <h6 class="chart-card-subtitle">In Trillions USD</h6>
+
+                                       <div class="chart-area">
+
+                                        <div id="home-fed-balance-sheet-chart" style="width: 100%; height: 300px;">
+                                            <div style="width: 100%; height: 100%; position: relative; left: 0.25px; top: 0.40625px;">
+                                                <div id="lineChart122"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           </div>
+                            <div class=" col-sm-4">
+                               <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item" data-index="1" style="flex: 1 1 auto; position: relative; width: 424px;">
+
+                                   <div class="single-line-chart-card"><h4 class="chart-card-title">Fed Balance Sheet</h4>
+                                    <h6 class="chart-card-subtitle">In Trillions USD</h6>
+
+                                       <div class="chart-area">
+
                                         <div id="home-fed-balance-sheet-chart" style="width: 100%; height: 300px;">
                                             <div style="width: 100%; height: 100%; position: relative; left: 0.25px; top: 0.40625px;">
                                                 <div id="lineChart123"></div>
@@ -418,6 +457,58 @@
                                     </div>
                                 </div>
                             </div>
+                           </div>
+                             <div class=" col-sm-4">
+                               <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item" data-index="1" style="flex: 1 1 auto; position: relative; width: 424px;">
+
+                                   <div class="single-line-chart-card"><h4 class="chart-card-title">Fed Balance Sheet</h4>
+                                    <h6 class="chart-card-subtitle">In Trillions USD</h6>
+
+                                       <div class="chart-area">
+
+                                        <div id="home-fed-balance-sheet-chart" style="width: 100%; height: 300px;">
+                                            <div style="width: 100%; height: 100%; position: relative; left: 0.25px; top: 0.40625px;">
+                                                <div id="lineChart124"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           </div>
+                             <div class=" col-sm-4">
+                               <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item" data-index="1" style="flex: 1 1 auto; position: relative; width: 424px;">
+
+                                   <div class="single-line-chart-card"><h4 class="chart-card-title">Fed Balance Sheet</h4>
+                                    <h6 class="chart-card-subtitle">In Trillions USD</h6>
+
+                                       <div class="chart-area">
+
+                                        <div id="home-fed-balance-sheet-chart" style="width: 100%; height: 300px;">
+                                            <div style="width: 100%; height: 100%; position: relative; left: 0.25px; top: 0.40625px;">
+                                                <div id="lineChart125"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           </div>
+                            <div class=" col-sm-4">
+                               <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item" data-index="1" style="flex: 1 1 auto; position: relative; width: 424px;">
+
+                                   <div class="single-line-chart-card"><h4 class="chart-card-title">Fed Balance Sheet</h4>
+                                    <h6 class="chart-card-subtitle">In Trillions USD</h6>
+
+                                       <div class="chart-area">
+
+                                        <div id="home-fed-balance-sheet-chart" style="width: 100%; height: 300px;">
+                                            <div style="width: 100%; height: 100%; position: relative; left: 0.25px; top: 0.40625px;">
+                                                <div id="lineChart126"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           </div>
                            </div>
                         </div>
 
@@ -435,7 +526,7 @@
                 <div class="blog-slider">
                     <div class="react-multi-carousel-list ">
                         <div class="row">
-                            <div class="col-sm">
+                            <div class="col-sm-3">
                                 <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item"
                                 data-index="0"
                                 style="flex: 1 1 auto; position: relative; width: 339px;">
@@ -453,7 +544,7 @@
                                 </div>
                             </div>
                             </div>
-                            <div class="col-sm">
+                            <div class="col-sm-3">
                                  <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item"
                                 data-index="0"
                                 style="flex: 1 1 auto; position: relative; width: 339px;">
@@ -471,7 +562,7 @@
                                 </div>
                             </div>
                             </div>
-                            <div class="col-sm">
+                            <div class="col-sm-3">
                                  <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item"
                                 data-index="2"
                                 style="flex: 1 1 auto; position: relative; width: 339px;">
@@ -489,9 +580,9 @@
                                 </div>
                             </div>
                             </div>
-                            <div class="col-sm">
+                            <div class="col-sm-3">
                                  <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item"
-                                data-index="4"
+                                data-index="2"
                                 style="flex: 1 1 auto; position: relative; width: 339px;">
                                 <div class="blog-card"
                                      style="background-image: url(&quot;https://images.unsplash.com/photo-1597614773588-543592d2c5f8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=632&amp;q=80&quot;);">
@@ -507,71 +598,9 @@
                                 </div>
                             </div>
                             </div>
+
                         </div>
-                        <div class="row">
-                            <div class="col-sm">  <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item"
-                                data-index="4"
-                                style="flex: 1 1 auto; position: relative; width: 339px;">
-                                <div class="blog-card"
-                                     style="background-image: url(&quot;https://images.unsplash.com/photo-1597614773588-543592d2c5f8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=632&amp;q=80&quot;);">
-                                    <div class="blog-card-seprator"></div>
-                                    <div class="blog-card-body"><h6 class="blog-card-title">News Title</h6>
-                                        <p class="blog-card-excerpt">There are currently 6,445,494 Currently Infected
-                                            Patients tests for
-                                            COVID were administered.</p><a class="blog-card-readnow"
-                                                                           href="/singleblog/News Title">Read Now</a>
-                                        <p class="blog-card-source"><b>Source:</b> <a href="https://www.google.com/"
-                                                                                      rel="noreferrer" target="_blank">Source
-                                            Link</a></p></div>
-                                </div>
-                            </div></div>
-                            <div class="col-sm">  <div aria-hidden="true" class="react-multi-carousel-item  image-item" data-index="5"
-                                style="flex: 1 1 auto; position: relative; width: 339px;">
-                                <div class="blog-card"
-                                     style="background-image: url(&quot;https://images.unsplash.com/photo-1597614773588-543592d2c5f8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=632&amp;q=80&quot;);">
-                                    <div class="blog-card-seprator"></div>
-                                    <div class="blog-card-body"><h6 class="blog-card-title">News Title</h6>
-                                        <p class="blog-card-excerpt">There are currently 6,445,494 Currently Infected
-                                            Patients tests for
-                                            COVID were administered.</p><a class="blog-card-readnow"
-                                                                           href="/singleblog/News Title">Read Now</a>
-                                        <p class="blog-card-source"><b>Source:</b> <a href="https://www.google.com/"
-                                                                                      rel="noreferrer" target="_blank">Source
-                                            Link</a></p></div>
-                                </div>
-                            </div></div>
-                            <div class="col-sm"><div aria-hidden="true" class="react-multi-carousel-item  image-item" data-index="6"
-                                style="flex: 1 1 auto; position: relative; width: 339px;">
-                                <div class="blog-card"
-                                     style="background-image: url(&quot;https://images.unsplash.com/photo-1597614773588-543592d2c5f8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=632&amp;q=80&quot;);">
-                                    <div class="blog-card-seprator"></div>
-                                    <div class="blog-card-body"><h6 class="blog-card-title">News Title</h6>
-                                        <p class="blog-card-excerpt">There are currently 6,445,494 Currently Infected
-                                            Patients tests for
-                                            COVID were administered.</p><a class="blog-card-readnow"
-                                                                           href="/singleblog/News Title">Read Now</a>
-                                        <p class="blog-card-source"><b>Source:</b> <a href="https://www.google.com/"
-                                                                                      rel="noreferrer" target="_blank">Source
-                                            Link</a></p></div>
-                                </div>
-                            </div></div>
-                            <div class="col-sm">  <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item--active image-item"
-                                data-index="4"
-                                style="flex: 1 1 auto; position: relative; width: 339px;">
-                                <div class="blog-card"
-                                     style="background-image: url(&quot;https://images.unsplash.com/photo-1597614773588-543592d2c5f8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=632&amp;q=80&quot;);">
-                                    <div class="blog-card-seprator"></div>
-                                    <div class="blog-card-body"><h6 class="blog-card-title">News Title</h6>
-                                        <p class="blog-card-excerpt">There are currently 6,445,494 Currently Infected
-                                            Patients tests for
-                                            COVID were administered.</p><a class="blog-card-readnow"
-                                                                           href="/singleblog/News Title">Read Now</a>
-                                        <p class="blog-card-source"><b>Source:</b> <a href="https://www.google.com/"
-                                                                                      rel="noreferrer" target="_blank">Source
-                                            Link</a></p></div>
-                                </div>
-                            </div></div>
-                        </div>
+
 <!--                        <ul class="react-multi-carousel-track "-->
 <!--                            style="transition: none 0s ease 0s; overflow: unset; transform: translate3d(0px, 0px, 0px);display:inline-flex;">-->
 <!--                            <div aria-hidden="false" class="react-multi-carousel-item react-multi-carousel-item&#45;&#45;active image-item"-->
@@ -689,7 +718,7 @@
                     </div>
                 </div>
             </div>
-            <div class="small-container   ">
+            <div class="small-container  ">
                 <div class="section-layout section-layout-padding"><h2 class="section-title">United States Changes in
                     Small Business Revenue</h2>
                     <p class="section-date">Last updated: August 12, 2020 at 5:45 a.m. ET</p>
@@ -706,1110 +735,26 @@
                         <div class="chart-area">
                             <div id="home-economic-impact-chart" style="width: 100%; height: 300px;">
                                 <div style="width: 100%; height: 100%; position: relative; left: -0.5px; top: -0.03125px;">
-                                    <svg role="group" style="width: 100%; height: 100%; overflow: visible;"
-                                         version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                        <defs>
-                                            <clipPath id="id-144">
-                                                <rect height="300" width="850"></rect>
-                                            </clipPath>
-                                            <linearGradient id="gradient-id-167" x1="1%" x2="99%" y1="59%" y2="41%">
-                                                <stop offset="0" stop-color="#474758"></stop>
-                                                <stop offset="0.75" stop-color="#474758" stop-opacity="1"></stop>
-                                                <stop offset="0.755" stop-color="#3cabff" stop-opacity="1"></stop>
-                                            </linearGradient>
-                                            <filter filterUnits="objectBoundingBox" height="200%" id="filter-id-176"
-                                                    width="200%" x="-50%" y="-50%"></filter>
-                                            <filter filterUnits="objectBoundingBox" height="200%" id="filter-id-197"
-                                                    width="200%" x="-50%" y="-50%"></filter>
-                                            <clipPath id="id-230">
-                                                <path d="M0,0 L779,0 L779,239 L0,239 L0,0M0,239 L0,239 L779,239 L779,239 L0,239"></path>
-                                            </clipPath>
-                                            <clipPath id="id-265">
-                                                <path d="M0,239 L0,239 L779,239 L779,239 L0,239"></path>
-                                            </clipPath>
-                                            <clipPath id="id-272">
-                                                <rect height="239" width="779"></rect>
-                                            </clipPath>
-                                            <filter filterUnits="objectBoundingBox" height="200%" id="filter-id-149"
-                                                    width="200%" x="-50%" y="-50%">
-                                                <feGaussianBlur in="SourceGraphic" result="blurOut"
-                                                                stdDeviation="1.5"></feGaussianBlur>
-                                                <feOffset dx="1" dy="1" result="offsetBlur"></feOffset>
-                                                <feFlood flood-color="#000000" flood-opacity="0.5"></feFlood>
-                                                <feComposite in2="offsetBlur" operator="in"></feComposite>
-                                                <feMerge>
-                                                    <feMergeNode></feMergeNode>
-                                                    <feMergeNode in="SourceGraphic"></feMergeNode>
-                                                </feMerge>
-                                            </filter>
-                                            <filter filterUnits="objectBoundingBox" height="120%" id="filter-id-164"
-                                                    width="120%" x="-10%" y="-10%">
-                                                <feColorMatrix type="saturate" values="0"></feColorMatrix>
-                                            </filter>
-                                            <filter filterUnits="objectBoundingBox" height="200%" id="filter-id-235"
-                                                    width="200%" x="-50%" y="-50%">
-                                                <feGaussianBlur in="SourceGraphic" result="blurOut"
-                                                                stdDeviation="1.5"></feGaussianBlur>
-                                                <feOffset dx="1" dy="1" result="offsetBlur"></feOffset>
-                                                <feFlood flood-color="#000000" flood-opacity="0.5"></feFlood>
-                                                <feComposite in2="offsetBlur" operator="in"></feComposite>
-                                                <feMerge>
-                                                    <feMergeNode></feMergeNode>
-                                                    <feMergeNode in="SourceGraphic"></feMergeNode>
-                                                </feMerge>
-                                            </filter>
-                                            <clipPath id="id-2675">
-                                                <rect height="239" width="779"></rect>
-                                            </clipPath>
-                                        </defs>
-                                        <g>
-                                            <g fill="#ffffff" fill-opacity="0">
-                                                <rect height="300" width="850"></rect>
-                                            </g>
-                                            <g>
-                                                <g aria-describedby="id-120-description" clip-path="url(&quot;#id-144&quot;)" opacity="1"
-                                                   role="region">
-                                                    <g transform="translate(15,15)">
-                                                        <g>
-                                                            <g>
-                                                                <g>
-                                                                    <g>
-                                                                        <g>
-                                                                            <g>
-                                                                                <g style="touch-action: none; user-select: none; -webkit-user-drag: none;"
-                                                                                   transform="translate(36,0)">
-                                                                                    <g fill="#ffffff" fill-opacity="0">
-                                                                                        <rect height="239"
-                                                                                              width="779"></rect>
-                                                                                    </g>
-                                                                                    <g>
-                                                                                        <g>
-                                                                                            <g>
-                                                                                                <g display="none"
-                                                                                                   fill-opacity="0"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0"
-                                                                                                   stroke-width="1">
-                                                                                                    <path transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   fill-opacity="0"
-                                                                                                   style="pointer-events: none;">
-                                                                                                    <path d="M0,239 L0,239 L779,239 L779,239 L0,239"></path>
-                                                                                                </g>
-                                                                                                <g display="none"
-                                                                                                   fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15">
-                                                                                                    <path transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g display="none"
-                                                                                                   fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(0,319)">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g display="none"
-                                                                                                   fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(0,279)">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(0,239)">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(0,199)">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(0,159)">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(0,119)">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(0,80)">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(0,40)">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g display="none"
-                                                                                                   fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(0,-40)">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                            </g>
-                                                                                        </g>
-                                                                                        <g>
-                                                                                            <g>
-                                                                                                <g display="none"
-                                                                                                   fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(808,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(58,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(115,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(173,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(231,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(289,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(346,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(404,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(462,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(519,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(577,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(635,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(692,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(750,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                            </g>
-                                                                                        </g>
-                                                                                        <g>
-                                                                                            <g>
-                                                                                                <g aria-describedby="id-225-description"
-                                                                                                   fill-opacity="0"
-                                                                                                   role="group"
-                                                                                                   stroke="#116083"
-                                                                                                   stroke-opacity="1"
-                                                                                                   stroke-width="2">
-                                                                                                    <g>
-                                                                                                        <g clip-path="url(&quot;#id-230&quot;)">
-                                                                                                            <g>
-                                                                                                                <g>
-                                                                                                                    <g>
-                                                                                                                        <g fill="#67b7dc"
-                                                                                                                           fill-opacity="0"
-                                                                                                                           stroke="#116083"
-                                                                                                                           stroke-opacity="1"
-                                                                                                                           stroke-width="2"
-                                                                                                                           style="pointer-events: none;">
-                                                                                                                            <g>
-                                                                                                                                <g stroke-opacity="0">
-                                                                                                                                    <path></path>
-                                                                                                                                </g>
-                                                                                                                                <g fill="none"
-                                                                                                                                   fill-opacity="0">
-                                                                                                                                    <path d=" M-0.2,238.8  M0,239  C6.6367,238.9997 15.5825,208.3284 28.8542,208.3283 C42.1259,208.3283 44.4288,231.4316 57.7005,231.4317 C70.9722,231.4318 73.2812,219.0836 86.5547,219.0833 C99.8282,219.0831 102.1354,208.3286 115.4089,208.3283 C128.6823,208.3281 130.9913,191.1997 144.263,191.2 C157.5347,191.2003 159.8377,234.6186 173.1094,234.6183 C186.3811,234.6181 188.69,168.4951 201.9635,168.495 C215.237,168.4949 217.546,227.05 230.8177,227.05 C244.0894,227.05 246.3924,167.6989 259.6641,167.6983 C272.9358,167.6977 275.2447,167.2997 288.5182,167.3 C301.7917,167.3003 304.1007,197.5736 317.3724,197.5733 C330.6441,197.573 332.9471,137.4254 346.2188,137.425 C359.4905,137.4246 361.7994,155.3492 375.0729,155.35 C388.3464,155.3508 390.6536,213.1079 403.9271,213.1083 C417.2006,213.1087 419.5095,195.1838 432.7812,195.1833 C446.0529,195.1829 448.3559,170.4873 461.6276,170.4867 C474.8993,170.486 477.2083,131.8482 490.4818,131.8483 C503.7553,131.8485 506.0642,182.8353 519.3359,182.835 C532.6076,182.8347 534.9106,98.39 548.1823,98.3883 C561.454,98.3867 563.763,20.7131 577.0365,20.7133 C590.31,20.7136 592.6189,120.2955 605.8906,120.2967 C619.1623,120.2978 621.4653,132.6455 634.737,132.645 C648.0087,132.6445 650.3177,75.2858 663.5912,75.285 C676.8646,75.2842 679.1718,54.9702 692.4453,54.97 C705.7188,54.9698 708.0278,51.7833 721.2995,51.7833 C734.5712,51.7834 736.8741,61.7417 750.1458,61.7417 C763.4175,61.7417 772.3633,51.7834 779,51.7833"></path>
-                                                                                                                                </g>
-                                                                                                                            </g>
-                                                                                                                        </g>
-                                                                                                                    </g>
-                                                                                                                </g>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g></g>
-                                                                                                        <g>
-                                                                                                            <g>
-                                                                                                                <g clip-path="url(&quot;#id-265&quot;)"
-                                                                                                                   fill="#ff0000"
-                                                                                                                   stroke="#ff0000">
-                                                                                                                    <g>
-                                                                                                                        <g fill="#ff0000"
-                                                                                                                           stroke="#ff0000"
-                                                                                                                           style="pointer-events: none;">
-                                                                                                                            <g>
-                                                                                                                                <g stroke-opacity="0">
-                                                                                                                                    <path></path>
-                                                                                                                                </g>
-                                                                                                                                <g fill="none"
-                                                                                                                                   fill-opacity="0">
-                                                                                                                                    <path d=" M-0.2,238.8  M0,239  C6.6367,238.9997 15.5825,208.3284 28.8542,208.3283 C42.1259,208.3283 44.4288,231.4316 57.7005,231.4317 C70.9722,231.4318 73.2812,219.0836 86.5547,219.0833 C99.8282,219.0831 102.1354,208.3286 115.4089,208.3283 C128.6823,208.3281 130.9913,191.1997 144.263,191.2 C157.5347,191.2003 159.8377,234.6186 173.1094,234.6183 C186.3811,234.6181 188.69,168.4951 201.9635,168.495 C215.237,168.4949 217.546,227.05 230.8177,227.05 C244.0894,227.05 246.3924,167.6989 259.6641,167.6983 C272.9358,167.6977 275.2447,167.2997 288.5182,167.3 C301.7917,167.3003 304.1007,197.5736 317.3724,197.5733 C330.6441,197.573 332.9471,137.4254 346.2188,137.425 C359.4905,137.4246 361.7994,155.3492 375.0729,155.35 C388.3464,155.3508 390.6536,213.1079 403.9271,213.1083 C417.2006,213.1087 419.5095,195.1838 432.7812,195.1833 C446.0529,195.1829 448.3559,170.4873 461.6276,170.4867 C474.8993,170.486 477.2083,131.8482 490.4818,131.8483 C503.7553,131.8485 506.0642,182.8353 519.3359,182.835 C532.6076,182.8347 534.9106,98.39 548.1823,98.3883 C561.454,98.3867 563.763,20.7131 577.0365,20.7133 C590.31,20.7136 592.6189,120.2955 605.8906,120.2967 C619.1623,120.2978 621.4653,132.6455 634.737,132.645 C648.0087,132.6445 650.3177,75.2858 663.5912,75.285 C676.8646,75.2842 679.1718,54.9702 692.4453,54.97 C705.7188,54.9698 708.0278,51.7833 721.2995,51.7833 C734.5712,51.7834 736.8741,61.7417 750.1458,61.7417 C763.4175,61.7417 772.3633,51.7834 779,51.7833"></path>
-                                                                                                                                </g>
-                                                                                                                            </g>
-                                                                                                                        </g>
-                                                                                                                    </g>
-                                                                                                                </g>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                    </g>
-                                                                                                    <desc id="id-225-description">
-                                                                                                        Series
-                                                                                                    </desc>
-                                                                                                </g>
-                                                                                            </g>
-                                                                                        </g>
-                                                                                        <g clip-path="url(&quot;#id-2675&quot;)">
-                                                                                            <g>
-                                                                                                <g fill="#67b7dc"
-                                                                                                   stroke="#116083">
-                                                                                                    <g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(0,239)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(28.854,208.328)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(57.701,231.432)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(86.555,219.083)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(115.409,208.328)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(144.263,191.2)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(173.109,234.618)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(201.964,168.495)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(230.818,227.05)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(259.664,167.698)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(288.518,167.3)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(317.372,197.573)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(346.219,137.425)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(375.073,155.35)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(403.927,213.108)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(432.781,195.183)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(461.628,170.487)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(490.482,131.848)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(519.336,182.835)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(548.182,98.388)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(577.036,20.713)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(605.891,120.297)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(634.737,132.645)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(663.591,75.285)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(692.445,54.97)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(721.299,51.783)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(750.146,61.742)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                        <g opacity="1"
-                                                                                                           transform="translate(779,51.783)">
-                                                                                                            <g></g>
-                                                                                                        </g>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                            </g>
-                                                                                        </g>
-                                                                                        <g>
-                                                                                            <g>
-                                                                                                <g>
-                                                                                                    <g></g>
-                                                                                                </g>
-                                                                                                <g>
-                                                                                                    <g></g>
-                                                                                                </g>
-                                                                                            </g>
-                                                                                        </g>
-                                                                                        <g>
-                                                                                            <g></g>
-                                                                                        </g>
-                                                                                        <g>
-                                                                                            <g></g>
-                                                                                        </g>
-                                                                                        <g aria-hidden="true"
-                                                                                           clip-path="url(&quot;#id-272&quot;)"
-                                                                                           opacity="0"
-                                                                                           style="touch-action: none; user-select: none; -webkit-user-drag: none;"
-                                                                                           visibility="hidden">
-                                                                                            <g>
-                                                                                                <g fill="#000000"
-                                                                                                   fill-opacity="0.2"
-                                                                                                   style="pointer-events: none;"
-                                                                                                   visibility="hidden">
-                                                                                                    <path></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-dasharray="3,3"
-                                                                                                   stroke-opacity="0.4"
-                                                                                                   style="pointer-events: none;">
-                                                                                                    <path d=" M0,0  L0,239 "></path>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-dasharray="3,3"
-                                                                                                   stroke-opacity="0.4"
-                                                                                                   style="pointer-events: none;">
-                                                                                                    <path d=" M0,0  L779,0 "></path>
-                                                                                                </g>
-                                                                                            </g>
-                                                                                        </g>
-                                                                                        <g aria-hidden="true"
-                                                                                           aria-labelledby="id-135-title" focusable="true"
-                                                                                           opacity="0"
-                                                                                           role="button"
-                                                                                           tabindex="0"
-                                                                                           transform="translate(739,-3)"
-                                                                                           visibility="hidden">
-                                                                                            <g fill="#6794dc"
-                                                                                               fill-opacity="1"
-                                                                                               stroke="#ffffff"
-                                                                                               stroke-opacity="0"
-                                                                                               transform="translate(0,8)">
-                                                                                                <path d="M17,0 L18,0 a17,17 0 0 1 17,17 L35,17 a17,17 0 0 1 -17,17 L17,34 a17,17 0 0 1 -17,-17 L0,17 a17,17 0 0 1 17,-17 Z"></path>
-                                                                                            </g>
-                                                                                            <g transform="translate(9,9)">
-                                                                                                <g stroke="#ffffff"
-                                                                                                   style="pointer-events: none;"
-                                                                                                   transform="translate(0,8)">
-                                                                                                    <path d=" M0,0  L11,0 "
-                                                                                                          transform="translate(2.5,7.5)"></path>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   style="pointer-events: none;"
-                                                                                                   transform="translate(17,8)">
-                                                                                                    <g display="none"></g>
-                                                                                                </g>
-                                                                                            </g>
-                                                                                            <title id="id-135-title">
-                                                                                                Zoom Out</title></g>
-                                                                                    </g>
-                                                                                </g>
-                                                                                <g>
-                                                                                    <g>
-                                                                                        <g aria-hidden="true"
-                                                                                           font-size="9px">
-                                                                                            <g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(0,119.5) rotate(-90)">
-                                                                                                    <g display="none"></g>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   opacity="1"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0.15"
-                                                                                                   transform="translate(36,239)">
-                                                                                                    <path d=" M0,0  L779,0 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                                <g transform="translate(0,0)">
-                                                                                                    <g>
-                                                                                                        <g fill="#000000"
-                                                                                                           fill-opacity="0"
-                                                                                                           opacity="0"
-                                                                                                           stroke-opacity="0"
-                                                                                                           style="pointer-events: none;"
-                                                                                                           transform="translate(36,119.5)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-26,-5.5)">
-                                                                                                                <text dy="-2.974"
-                                                                                                                      x="0"
-                                                                                                                      y="11.015625">
-                                                                                                                    <tspan>
-                                                                                                                        0.4
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g display="none"
-                                                                                                           fill="#000000">
-                                                                                                            <g display="none"
-                                                                                                               transform="translate(10,0)"></g>
-                                                                                                        </g>
-                                                                                                        <g display="none"
-                                                                                                           fill="#000000"
-                                                                                                           transform="translate(36,318.667)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-29,-5.5)">
-                                                                                                                <text dy="-2.97"
-                                                                                                                      x="0"
-                                                                                                                      y="11">
-                                                                                                                    <tspan>
-                                                                                                                        -0.2
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g display="none"
-                                                                                                           fill="#000000"
-                                                                                                           transform="translate(36,278.833)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-27,-5.5)">
-                                                                                                                <text dy="-2.97"
-                                                                                                                      x="0"
-                                                                                                                      y="11">
-                                                                                                                    <tspan>
-                                                                                                                        -0.1
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g fill="#000000"
-                                                                                                           transform="translate(36,239)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-18,-5.5)">
-                                                                                                                <text dy="-2.97"
-                                                                                                                      x="0"
-                                                                                                                      y="11">
-                                                                                                                    <tspan>
-                                                                                                                        0
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g fill="#000000"
-                                                                                                           transform="translate(36,199.167)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-23,-5.5)">
-                                                                                                                <text dy="-2.97"
-                                                                                                                      x="0"
-                                                                                                                      y="11">
-                                                                                                                    <tspan>
-                                                                                                                        0.1
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g fill="#000000"
-                                                                                                           transform="translate(36,159.333)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-25,-5.5)">
-                                                                                                                <text dy="-2.97"
-                                                                                                                      x="0"
-                                                                                                                      y="11">
-                                                                                                                    <tspan>
-                                                                                                                        0.2
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g fill="#000000"
-                                                                                                           transform="translate(36,119.5)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-25,-5.5)">
-                                                                                                                <text dy="-2.97"
-                                                                                                                      x="0"
-                                                                                                                      y="11">
-                                                                                                                    <tspan>
-                                                                                                                        0.3
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g fill="#000000"
-                                                                                                           transform="translate(36,79.667)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-26,-5.5)">
-                                                                                                                <text dy="-2.97"
-                                                                                                                      x="0"
-                                                                                                                      y="11">
-                                                                                                                    <tspan>
-                                                                                                                        0.4
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g fill="#000000"
-                                                                                                           transform="translate(36,39.833)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-25,-5.5)">
-                                                                                                                <text dy="-2.97"
-                                                                                                                      x="0"
-                                                                                                                      y="11">
-                                                                                                                    <tspan>
-                                                                                                                        0.5
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g fill="#000000"
-                                                                                                           transform="translate(36,0)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-26,-5.5)">
-                                                                                                                <text dy="-2.97"
-                                                                                                                      x="0"
-                                                                                                                      y="11">
-                                                                                                                    <tspan>
-                                                                                                                        0.6
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                        <g display="none"
-                                                                                                           fill="#000000"
-                                                                                                           transform="translate(36,-39.833)">
-                                                                                                            <g style="user-select: none;"
-                                                                                                               transform="translate(-25,-5.5)">
-                                                                                                                <text dy="-2.97"
-                                                                                                                      x="0"
-                                                                                                                      y="11">
-                                                                                                                    <tspan>
-                                                                                                                        0.7
-                                                                                                                    </tspan>
-                                                                                                                </text>
-                                                                                                            </g>
-                                                                                                        </g>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="none"
-                                                                                                   stroke="#000000"
-                                                                                                   stroke-opacity="0"
-                                                                                                   style="pointer-events: none;"
-                                                                                                   transform="translate(36,0)">
-                                                                                                    <path d=" M0,0  L0,239 "
-                                                                                                          transform="translate(-0.5,-0.5)"></path>
-                                                                                                </g>
-                                                                                            </g>
-                                                                                        </g>
-                                                                                    </g>
-                                                                                </g>
-                                                                                <g transform="translate(815,0)">
-                                                                                    <g></g>
-                                                                                </g>
-                                                                            </g>
-                                                                        </g>
-                                                                        <g>
-                                                                            <g transform="translate(36,0)"></g>
-                                                                        </g>
-                                                                        <g transform="translate(0,239)">
-                                                                            <g transform="translate(36,0)">
-                                                                                <g aria-hidden="true" font-size="9px">
-                                                                                    <g>
-                                                                                        <g fill="none"
-                                                                                           stroke="#000000"
-                                                                                           stroke-opacity="0"
-                                                                                           style="pointer-events: none;">
-                                                                                            <path d=" M0,0  L779,0 "
-                                                                                                  transform="translate(-0.5,-0.5)"></path>
-                                                                                        </g>
-                                                                                        <g>
-                                                                                            <g>
-                                                                                                <g fill="#000000"
-                                                                                                   fill-opacity="0"
-                                                                                                   opacity="0"
-                                                                                                   stroke-opacity="0"
-                                                                                                   style="pointer-events: none;"
-                                                                                                   transform="translate(389.5,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-3.5,10)">
-                                                                                                        <text dy="-2.974"
-                                                                                                              x="0"
-                                                                                                              y="11.015625">
-                                                                                                            <tspan>L
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g display="none"
-                                                                                                   fill="#000000"
-                                                                                                   transform="translate(807.854,0)">
-                                                                                                    <g display="none"
-                                                                                                       transform="translate(0,10)"></g>
-                                                                                                </g>
-                                                                                                <g fill="#000000">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-11,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1963
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(57.704,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-10.5,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1977
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(115.409,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-11.5,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1980
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(173.109,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-11,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1982
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(230.814,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-11.5,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1986
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(288.518,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-11.5,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1988
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(346.223,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-11.5,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1990
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(403.927,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-11,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1992
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(461.628,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-11.5,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1994
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(519.336,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-11.5,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1996
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(577.036,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-11.5,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                1998
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(634.741,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-12.5,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                2000
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(692.445,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-12,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                2002
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                                <g fill="#000000"
-                                                                                                   transform="translate(750.146,0)">
-                                                                                                    <g style="user-select: none;"
-                                                                                                       transform="translate(-12.5,10)">
-                                                                                                        <text dy="-2.97"
-                                                                                                              x="0"
-                                                                                                              y="11">
-                                                                                                            <tspan>
-                                                                                                                2004
-                                                                                                            </tspan>
-                                                                                                        </text>
-                                                                                                    </g>
-                                                                                                </g>
-                                                                                            </g>
-                                                                                        </g>
-                                                                                        <g aria-hidden="true"
-                                                                                           display="none"
-                                                                                           fill="none" opacity="0"
-                                                                                           stroke="#000000"
-                                                                                           stroke-opacity="0.15"
-                                                                                           transform="translate(779,-239)"
-                                                                                           visibility="hidden">
-                                                                                            <path d=" M0,0  L0,239 "
-                                                                                                  transform="translate(-0.5,-0.5)"></path>
-                                                                                        </g>
-                                                                                        <g fill="#000000"
-                                                                                           transform="translate(389.5,31)">
-                                                                                            <g display="none"></g>
-                                                                                        </g>
-                                                                                    </g>
-                                                                                </g>
-                                                                            </g>
-                                                                        </g>
-                                                                    </g>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                    <desc id="id-120-description">Chart</desc>
-                                                </g>
-                                                <g>
-                                                    <g>
-                                                        <g opacity="0" role="tooltip" visibility="hidden">
-                                                            <g fill="#ffffff" fill-opacity="0.9" filter="url(&quot;#filter-id-149&quot;)"
-                                                               stroke="#ffffff" stroke-opacity="1"
-                                                               stroke-width="1"
-                                                               style="pointer-events: none;" transform="translate(0,6)">
-                                                                <path d="M3,0 L3,0 L0,-6 L13,0 L21,0 a3,3 0 0 1 3,3 L24,8 a3,3 0 0 1 -3,3 L3,11 a3,3 0 0 1 -3,-3 L0,3 a3,3 0 0 1 3,-3"></path>
-                                                            </g>
-                                                            <g>
-                                                                <g fill="#ffffff" style="pointer-events: none;"
-                                                                   transform="translate(12,6)">
-                                                                    <g display="none" transform="translate(0,7)"></g>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                        <g display="none" style="pointer-events: none;"
-                                                           visibility="hidden">
-                                                            <g fill="#ffffff" opacity="1">
-                                                                <rect height="300" width="850"></rect>
-                                                            </g>
-                                                            <g>
-                                                                <g transform="translate(425,150)">
-                                                                    <g>
-                                                                        <g fill="#f3f3f3" fill-opacity="0.8"
-                                                                           stroke-opacity="1">
-                                                                            <g>
-                                                                                <g>
-                                                                                    <path d=" M53,0  a53,53,0,0,1,-106,0 a53,53,0,0,1,106,0 M42,0  a42,42,0,0,0,-84,0 a42,42,0,0,0,84,0 L42,0 "></path>
-                                                                                </g>
-                                                                            </g>
-                                                                        </g>
-                                                                        <g fill="#000000" fill-opacity="0.2"
-                                                                           stroke-opacity="1">
-                                                                            <g>
-                                                                                <g>
-                                                                                    <path d=" M50,0  a50,50,0,0,1,-100,0 a50,50,0,0,1,100,0 M45,0  a45,45,0,0,0,-90,0 a45,45,0,0,0,90,0 L45,0 "></path>
-                                                                                </g>
-                                                                            </g>
-                                                                        </g>
-                                                                        <g fill="#000000" fill-opacity="0.4">
-                                                                            <g style="user-select: none;"
-                                                                               transform="translate(-24,-11)">
-                                                                                <text dy="-5.94" text-anchor="middle" x="24px"
-                                                                                      y="22">
-                                                                                    <tspan>100%</tspan>
-                                                                                </text>
-                                                                            </g>
-                                                                        </g>
-                                                                    </g>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                        <g aria-labelledby="id-164-title" filter="url(&quot;#filter-id-164&quot;)"
-                                                           opacity="0.3"
-                                                           style="cursor: pointer;" transform="translate(0,279)">
-                                                            <g fill="#ffffff" opacity="0">
-                                                                <rect height="21" width="66"></rect>
-                                                            </g>
-                                                            <g>
-                                                                <g fill="none" shape-rendering="auto" stroke="#3cabff"
-                                                                   stroke-opacity="1" stroke-width="1.7999999999999998">
-                                                                    <path d=" M15,15  C17.4001,15 22.7998,15.0001 27,15 C31.2002,14.9999 33.2999,6 36,6 C38.7001,6 38.6999,10.5 40.5,10.5 C42.3001,10.5 42.2999,6 45,6 C47.7001,6 50.9999,14.9999 54,15 C57.0002,15.0001 58.7999,15 60,15"></path>
-                                                                </g>
-                                                                <g fill="none" shape-rendering="auto" stroke="url(&quot;#gradient-id-167&quot;)"
-                                                                   stroke-opacity="1"
-                                                                   stroke-width="1.7999999999999998">
-                                                                    <path d=" M6,15  C8.2501,15 9.7498,15.0001 15,15 C20.2502,14.9999 20.7748,3.6 27,3.6 C33.2252,3.6 33.8998,14.9999 39.9,15 C45.9002,15.0001 45.9748,15 51,15 C56.0252,15 57.7499,15 60,15"></path>
-                                                                </g>
-                                                            </g>
-                                                            <title id="id-164-title">Chart created using amCharts
-                                                                library</title></g>
-                                                        <g opacity="0" role="tooltip" visibility="hidden">
-                                                            <g fill="#000000" fill-opacity="1" stroke="#000000"
-                                                               stroke-opacity="1" stroke-width="1"
-                                                               style="pointer-events: none;"
-                                                               transform="translate(51,254)">
-                                                                <path d="M0,0 L20,0 a0,0 0 0 1 0,0 L20,10 a0,0 0 0 1 -0,0 L0,10 a0,0 0 0 1 -0,-0 L0,0 a0,0 0 0 1 0,-0"></path>
-                                                            </g>
-                                                            <g>
-                                                                <g fill="#ffffff" style="pointer-events: none;"
-                                                                   transform="translate(61,254)">
-                                                                    <g display="none" transform="translate(0,5)"></g>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                        <g opacity="0" role="tooltip" visibility="hidden">
-                                                            <g fill="#000000" fill-opacity="1" stroke="#000000"
-                                                               stroke-opacity="1" stroke-width="1"
-                                                               style="pointer-events: none;"
-                                                               transform="translate(-25,15)">
-                                                                <path d="M0,0 L20,0 a0,0 0 0 1 0,0 L20,0 L20,0 L25,0 L20,10 L20,10 a0,0 0 0 1 -0,0 L0,10 a0,0 0 0 1 -0,-0 L0,0 a0,0 0 0 1 0,-0"></path>
-                                                            </g>
-                                                            <g>
-                                                                <g fill="#ffffff" style="pointer-events: none;"
-                                                                   transform="translate(-15,15)">
-                                                                    <g display="none" transform="translate(0,5)"></g>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                        <g opacity="0" role="tooltip" visibility="hidden">
-                                                            <g fill="#ffffff" fill-opacity="0.9" filter="url(&quot;#filter-id-235&quot;)"
-                                                               stroke="#ffffff" stroke-opacity="1"
-                                                               stroke-width="1"
-                                                               style="pointer-events: none;" transform="translate(6,0)">
-                                                                <path d="M3,0 L21,0 a3,3 0 0 1 3,3 L24,8 a3,3 0 0 1 -3,3 L3,11 a3,3 0 0 1 -3,-3 L0,8 L0,8 L-6,0 L0,-2 L0,3 a3,3 0 0 1 3,-3"></path>
-                                                            </g>
-                                                            <g>
-                                                                <g fill="#ffffff" style="pointer-events: none;"
-                                                                   transform="translate(18,0)">
-                                                                    <g display="none" transform="translate(0,7)"></g>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </svg>
+                                   <div id="lineChart127"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="small-container  ">
+                <div class="section-layout section-layout-padding"><h2 class="section-title">CoVID-19’s Impact on International Travel</h2>
+                    <p class="section-date">Last updated:  {{updated_date.lastUpdatedDate}} ET</p>
+                    <p class="section-paragrapgh">
+                        This interactive map shows which countries have implemented restrictions on international travel.
+                        From March onwards many countries closed their borders.</p>
+                </div>
+                <div id="chartdiv-1"></div>
+
+            </div>
+
+
         </main>
     </div>
 </div>
@@ -1818,6 +763,79 @@
     $('#c19-table').DataTable();
 } );
 </script>
+
+<script>
+/**
+ * ---------------------------------------
+ * This demo was created using amCharts 4.
+ *
+ * For more information visit:
+ * https://www.amcharts.com/
+ *
+ * Documentation is available at:
+ * https://www.amcharts.com/docs/v4/
+ * ---------------------------------------
+ */
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+        // Set map definition
+        chart.geodata = am4geodata_worldLow;
+
+        // Set projection
+        chart.projection = new am4maps.projections.Orthographic();
+        chart.panBehavior = "rotateLongLat";
+        chart.deltaLatitude = -20;
+        chart.padding(20,20,20,20);
+
+        // limits vertical rotation
+        chart.adapter.add("deltaLatitude", function(delatLatitude){
+            return am4core.math.fitToRange(delatLatitude, -90, 90);
+        })
+
+        // Create map polygon series
+        var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+        // Make map load polygon (like country names) data from GeoJSON
+        polygonSeries.useGeodata = true;
+
+        // Configure series
+        var polygonTemplate = polygonSeries.mapPolygons.template;
+        polygonTemplate.tooltipText = "{name}";
+        polygonTemplate.fill = am4core.color("#545454");
+        polygonTemplate.stroke = am4core.color("#eee");
+        polygonTemplate.strokeWidth = 0.5;
+
+        var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
+        graticuleSeries.mapLines.template.line.stroke = am4core.color("#ffffff");
+        graticuleSeries.mapLines.template.line.strokeOpacity = 0.08;
+        graticuleSeries.fitExtent = false;
+
+        chart.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 0.1;
+        chart.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#ffffff");
+
+        // Create hover state and set alternative fill color
+        var hs = polygonTemplate.states.create("hover");
+        hs.properties.fill = chart.colors.getIndex(0).brighten(-0.5);
+
+        let animation;
+        setTimeout(function(){
+          animation = chart.animate({property:"deltaLongitude", to:100000}, 20000000);
+        }, 3000)
+
+        chart.seriesContainer.events.on("down", function(){
+        if(animation){
+          animation.stop();
+        }
+
+})
+
+</script>
+
 <script>
 /**
  * ---------------------------------------
@@ -1835,7 +853,7 @@
 am4core.useTheme(am4themes_animated);
 // Themes end
 
-var chart = am4core.create("chartdiv", am4maps.MapChart);
+var chart = am4core.create("chartdiv-1", am4maps.MapChart);
 
 // Set map definition
 chart.geodata = am4geodata_worldLow;
@@ -1889,6 +907,113 @@ if(animation){
 })
 
 </script>
+
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart = am4core.create("lineChart121", am4charts.XYChart);
+
+var data = [];
+
+var value = 50;
+
+for(var i = 0; i < 300; i++){
+
+  var date = new Date();
+
+<!--  date.setHours(0,0,0,0);-->
+
+  date.setDate(i);
+
+  value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+
+  data.push({date:date, value: value});
+
+}
+
+chart.data = data;
+
+// Create axes
+var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.minGridDistance = 60;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+// Create series
+var series = chart.series.push(new am4charts.LineSeries());
+series.dataFields.valueY = "value";
+series.dataFields.dateX = "date";
+series.tooltipText = "{value}"
+
+series.tooltip.pointerOrientation = "vertical";
+
+chart.cursor = new am4charts.XYCursor();
+chart.cursor.snapToSeries = series;
+chart.cursor.xAxis = dateAxis;
+
+//chart.scrollbarY = new am4core.Scrollbar();
+chart.scrollbarX = new am4core.Scrollbar();
+
+}); // end am4core.ready()
+</script>
+
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart = am4core.create("lineChart122", am4charts.XYChart);
+
+var data = [];
+
+var value = 50;
+
+for(var i = 0; i < 300; i++){
+
+  var date = new Date();
+
+<!--  date.setHours(0,0,0,0);-->
+
+  date.setDate(i);
+
+  value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+
+  data.push({date:date, value: value});
+
+}
+
+chart.data = data;
+
+// Create axes
+var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.minGridDistance = 60;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+// Create series
+var series = chart.series.push(new am4charts.LineSeries());
+series.dataFields.valueY = "value";
+series.dataFields.dateX = "date";
+series.tooltipText = "{value}"
+
+series.tooltip.pointerOrientation = "vertical";
+
+chart.cursor = new am4charts.XYCursor();
+chart.cursor.snapToSeries = series;
+chart.cursor.xAxis = dateAxis;
+
+//chart.scrollbarY = new am4core.Scrollbar();
+chart.scrollbarX = new am4core.Scrollbar();
+
+}); // end am4core.ready()
+</script>
+
 <script>
 am4core.ready(function() {
 
@@ -1941,6 +1066,219 @@ chart.scrollbarX = new am4core.Scrollbar();
 
 }); // end am4core.ready()
 </script>
+
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart = am4core.create("lineChart124", am4charts.XYChart);
+
+var data = [];
+
+var value = 50;
+
+for(var i = 0; i < 300; i++){
+
+  var date = new Date();
+
+<!--  date.setHours(0,0,0,0);-->
+
+  date.setDate(i);
+
+  value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+
+  data.push({date:date, value: value});
+
+}
+
+chart.data = data;
+
+// Create axes
+var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.minGridDistance = 60;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+// Create series
+var series = chart.series.push(new am4charts.LineSeries());
+series.dataFields.valueY = "value";
+series.dataFields.dateX = "date";
+series.tooltipText = "{value}"
+
+series.tooltip.pointerOrientation = "vertical";
+
+chart.cursor = new am4charts.XYCursor();
+chart.cursor.snapToSeries = series;
+chart.cursor.xAxis = dateAxis;
+
+//chart.scrollbarY = new am4core.Scrollbar();
+chart.scrollbarX = new am4core.Scrollbar();
+
+}); // end am4core.ready()
+</script>
+
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart = am4core.create("lineChart125", am4charts.XYChart);
+
+var data = [];
+
+var value = 50;
+
+for(var i = 0; i < 300; i++){
+
+  var date = new Date();
+
+<!--  date.setHours(0,0,0,0);-->
+
+  date.setDate(i);
+
+  value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+
+  data.push({date:date, value: value});
+
+}
+
+chart.data = data;
+
+// Create axes
+var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.minGridDistance = 60;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+// Create series
+var series = chart.series.push(new am4charts.LineSeries());
+series.dataFields.valueY = "value";
+series.dataFields.dateX = "date";
+series.tooltipText = "{value}"
+
+series.tooltip.pointerOrientation = "vertical";
+
+chart.cursor = new am4charts.XYCursor();
+chart.cursor.snapToSeries = series;
+chart.cursor.xAxis = dateAxis;
+
+//chart.scrollbarY = new am4core.Scrollbar();
+chart.scrollbarX = new am4core.Scrollbar();
+
+}); // end am4core.ready()
+</script>
+
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart = am4core.create("lineChart126", am4charts.XYChart);
+
+var data = [];
+
+var value = 50;
+
+for(var i = 0; i < 300; i++){
+
+  var date = new Date();
+
+<!--  date.setHours(0,0,0,0);-->
+
+  date.setDate(i);
+
+  value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+
+  data.push({date:date, value: value});
+
+}
+
+chart.data = data;
+
+// Create axes
+var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.minGridDistance = 60;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+// Create series
+var series = chart.series.push(new am4charts.LineSeries());
+series.dataFields.valueY = "value";
+series.dataFields.dateX = "date";
+series.tooltipText = "{value}"
+
+series.tooltip.pointerOrientation = "vertical";
+
+chart.cursor = new am4charts.XYCursor();
+chart.cursor.snapToSeries = series;
+chart.cursor.xAxis = dateAxis;
+
+//chart.scrollbarY = new am4core.Scrollbar();
+chart.scrollbarX = new am4core.Scrollbar();
+
+}); // end am4core.ready()
+</script>
+
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart = am4core.create("lineChart127", am4charts.XYChart);
+
+var data = [];
+
+var value = 50;
+
+for(var i = 0; i < 300; i++){
+
+  var date = new Date();
+
+<!--  date.setHours(0,0,0,0);-->
+
+  date.setDate(i);
+
+  value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+
+  data.push({date:date, value: value});
+
+}
+
+chart.data = data;
+
+// Create axes
+var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.minGridDistance = 60;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+// Create series
+var series = chart.series.push(new am4charts.LineSeries());
+series.dataFields.valueY = "value";
+series.dataFields.dateX = "date";
+series.tooltipText = "{value}"
+
+series.tooltip.pointerOrientation = "vertical";
+
+chart.cursor = new am4charts.XYCursor();
+chart.cursor.snapToSeries = series;
+chart.cursor.xAxis = dateAxis;
+
+//chart.scrollbarY = new am4core.Scrollbar();
+chart.scrollbarX = new am4core.Scrollbar();
+
+}); // end am4core.ready()
+</script>
+
 <!--<script>-->
 <!--    let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';-->
 <!--let response =  fetch(url);-->
@@ -1953,13 +1291,11 @@ chart.scrollbarX = new am4core.Scrollbar();
 <!--alert(commits[0].author.login);-->
 <!--</script>-->
 
-
+{% endblock %}
 <div class="mypanel"></div>
-
     <script>
     $.getJSON('http://time.jsontest.com', function(data) {
         var text = data.date
-        alert(text)
     });
     </script>
 </body>

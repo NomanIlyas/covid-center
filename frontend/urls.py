@@ -13,4 +13,5 @@ urlpatterns = [
     path('importStates/', views.importStates),
     path('importCountries/', views.importCountries),
     path('google_sheet/', views.google_sheet),
+    path('vaccinecounts/', views.vaccinecounts),
 ]
